@@ -1,4 +1,11 @@
 {
+
+  "usingComponents": {
+    "l-button": "lin-ui/button/index",
+    "l-skeleton":"lin-ui/skeleton/index",
+    "l-tabs":"lin-ui/tabs/index",
+    "l-tabpanel":"lin-ui/tabpanel/index"
+  },
   "pages":[
     "pages/index/index",
     "pages/logs/logs"
@@ -6,7 +13,7 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
+    "navigationBarTitleText": "福大猫猫",
     "navigationBarTextStyle":"black"
   },
   "style": "v2",

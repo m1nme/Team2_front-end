@@ -19,3 +19,13 @@
 .usermotto {
   margin-top: 200px;
 }
+
+.l-header-class{
+  width: 100% !important;
+}
+.l-active-class{
+  color: rgba(252, 135, 54, 100)!important;
+}
+.l-line-class{
+  background: rgba(252, 135, 54, 100)!important;
+}

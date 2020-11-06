@@ -1,17 +1,44 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
+	<view class="center-container">
+		<image style="width:100%" src="../../resource/image/fzumap.jpg"></image>
+	</view>
 
+	<view class="center-container">
+		<l-tabs bind:linchange="changeTabs" animated="{{false}}" swipeable="{{true}}" style="width:100%" l-active-class="l-active-class" l-line-class="l-line-class">
+			<l-tabpanel tab="一区" key="one" slot="one">
+				<view class="tab-content">
 
+					<l-skeleton loading="{{true}}" rows="1" avatar="{{true}}" avatar-size="60rpx" avatar-shape="circle" title-width="240rpx" rows-width="{{['440rpx']}}" rows-height="30rpx">
+						<!-- 插槽内容 -->
+						<view />
+					</l-skeleton>
 
-  <!-- <l-button type="default">default</l-button> -->
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+				</view>
+			</l-tabpanel>
+			<l-tabpanel tab="三区" key="two" slot="two">
+				<view class="tab-content">
+					<l-skeleton loading="{{true}}" rows="1" avatar="{{true}}" avatar-size="60rpx" avatar-shape="circle" title-width="240rpx" rows-width="{{['440rpx']}}" rows-height="30rpx">
+						<!-- 插槽内容 -->
+						<view />
+					</l-skeleton>
+
+				</view>
+			</l-tabpanel>
+			<l-tabpanel tab="科技园" key="three" slot="three">
+				<view class="tab-content">
+					<l-skeleton loading="{{true}}" rows="1" avatar="{{true}}" avatar-size="60rpx" avatar-shape="circle" title-width="240rpx" rows-width="{{['440rpx']}}" rows-height="30rpx">
+						<!-- 插槽内容 -->
+						<view />
+					</l-skeleton>
+				</view>
+			</l-tabpanel>
+			<l-tabpanel tab="文楼" key="four" slot="four">
+				<view class="tab-content">面板</view>
+			</l-tabpanel>
+			<l-tabpanel tab="其他" key="five" slot="five">
+				<view class="tab-content">面板</view>
+			</l-tabpanel>
+		</l-tabs>
+	</view>
 </view>
