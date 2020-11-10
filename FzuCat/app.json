@@ -4,7 +4,9 @@
     "l-button": "lin-ui/button/index",
     "l-skeleton":"lin-ui/skeleton/index",
     "l-tabs":"lin-ui/tabs/index",
-    "l-tabpanel":"lin-ui/tabpanel/index"
+    "l-tabpanel":"lin-ui/tabpanel/index",
+    "l-avatar":"lin-ui/avatar/index",
+    "l-card":"lin-ui/card/index"
   },
   "pages":[
     "pages/index/index",

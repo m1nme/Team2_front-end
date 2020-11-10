@@ -4,6 +4,8 @@ const app = getApp()
 
 Page({
   data: {
+    catList:[{"id":"123","picUrl":"1234","records":["11月6日14：30 主食x1","11月6日19：30 鸡肉x1"]}],
+    skeletonLoding:true,
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
@@ -14,6 +16,11 @@ Page({
     wx.navigateTo({
       url: '../logs/logs'
     })
+  },
+  tap:function(){
+    this.data.catList.push({"id":"123","picUrl":"1234","records":["11月6日14：30 主食x1","11月6日19：30 鸡肉x1"]})
+    this.data.catList.push({"id":"124","picUrl":"1244","records":["11月6日14：30 主食x1","11月6日19：30 鸡肉x1"]})
+    console.log(this.data.catList.length)
   },
   onLoad: function () {
     if (app.globalData.userInfo) {

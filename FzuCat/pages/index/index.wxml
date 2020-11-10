@@ -4,13 +4,34 @@
 		<image style="width:100%" src="../../resource/image/fzumap.jpg"></image>
 	</view>
 
+
+	<!-- <l-button type="default" bind:lintap="tap"></l-button> -->
+
 	<view class="center-container">
 		<l-tabs bind:linchange="changeTabs" animated="{{false}}" swipeable="{{true}}" style="width:100%" l-active-class="l-active-class" l-line-class="l-line-class">
 			<l-tabpanel tab="一区" key="one" slot="one">
 				<view class="tab-content">
 
-					<l-skeleton loading="{{true}}" rows="1" avatar="{{true}}" avatar-size="60rpx" avatar-shape="circle" title-width="240rpx" rows-width="{{['440rpx']}}" rows-height="30rpx">
+					<l-skeleton loading="{{false}}" rows="1" avatar="{{true}}" avatar-size="60rpx" avatar-shape="circle" title-width="240rpx" rows-width="{{['600rpx']}}" rows-height="30rpx">
 						<!-- 插槽内容 -->
+						<view class="container" wx:for="{{catList}}" wx:key="item">
+
+
+							<l-card type="avatar" full="{{true}}" image="/resource/image/2.jpg" title="做一个热爱生活的人！">
+								<view class="content">
+									大雄要死掉了,他对妻子说:我死之后你找一个男人我就在地下打一一个滚。
+									说完就咽气了。某天...
+								</view>
+							</l-card>
+
+							<!-- <view class="cat-card">
+								<l-avatar src="/resource/image/2.jpg" />
+                <view class="text-area">
+                      <view>{item.records[0]}</view>
+                      <view>{item.records[1]}</view>
+                </view>
+							</view> -->
+						</view>
 						<view />
 					</l-skeleton>
 
@@ -27,7 +48,7 @@
 			</l-tabpanel>
 			<l-tabpanel tab="科技园" key="three" slot="three">
 				<view class="tab-content">
-					<l-skeleton loading="{{true}}" rows="1" avatar="{{true}}" avatar-size="60rpx" avatar-shape="circle" title-width="240rpx" rows-width="{{['440rpx']}}" rows-height="30rpx">
+					<l-skeleton loading="{{true}}" rows="1" avatar="{{true}}" avatar-size="60rpx" avatar-shape="circle" title-width="240rpx" rows-width="{{['4440rpx']}}" rows-height="30rpx">
 						<!-- 插槽内容 -->
 						<view />
 					</l-skeleton>
