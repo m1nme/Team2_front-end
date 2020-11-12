@@ -4,9 +4,7 @@
 		<image style="width:100%" src="../../resource/image/fzumap.jpg"></image>
 	</view>
 
-
 	<!-- <l-button type="default" bind:lintap="tap"></l-button> -->
-
 	<view class="center-container">
 		<l-tabs bind:linchange="changeTabs" animated="{{false}}" swipeable="{{true}}" style="width:100%" l-active-class="l-active-class" l-line-class="l-line-class">
 			<l-tabpanel tab="一区" key="one" slot="one">
@@ -46,6 +44,7 @@
 
 				</view>
 			</l-tabpanel>
+			
 			<l-tabpanel tab="科技园" key="three" slot="three">
 				<view class="tab-content">
 					<l-skeleton loading="{{true}}" rows="1" avatar="{{true}}" avatar-size="60rpx" avatar-shape="circle" title-width="240rpx" rows-width="{{['4440rpx']}}" rows-height="30rpx">
