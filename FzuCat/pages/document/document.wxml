@@ -1,0 +1,36 @@
+<!--pages/document/document.wxml-->
+
+<view class="catImagePos">
+ <image mode="{{image.aspectFill}}" src="/resource/image/2.jpg" class="catImage">
+ </image>
+</view>
+<view class="catInfo">
+  <view class="color">
+    <text class="titleFont">毛色：\n</text>
+    <text class="pageFont">灰色</text>
+  </view>
+  <view class="sex">
+    <text class="titleFont"> 性别：\n</text>
+    <text class="pageFont">未知</text>
+  </view>
+  <view class="status">
+    <text class="titleFont">状态：\n</text>
+    <text class="pageFont">发呆</text>
+  </view>
+  <view class="character">
+    <text class="titleFont">性格：\n</text>
+    <text class="pageFont">未知</text>
+  </view>
+</view>
+<view class="newFeed">
+    <text class="titleFont">近期喂食\n</text>
+</view>
+<view bindtap="addNewFeed">
+  <image class="followIcon"src="./followIcon.PNG"></image>
+</view>
+<view bindtap="followCatList">
+  <image class="addIcon"src="./addIcon.PNG"></image>
+</view>
+<view bindtap="toForum">
+  <text class="forumLink">讨论它></text>
+</view>

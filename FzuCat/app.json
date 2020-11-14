@@ -9,6 +9,7 @@
     "l-card":"lin-ui/card/index"
   },
   "pages":[
+    "pages/document/document",
     "pages/index/index",
     "pages/logs/logs"
   ],
