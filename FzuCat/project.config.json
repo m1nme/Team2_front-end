@@ -18,26 +18,27 @@
     "scopeDataCheck": false,
     "uglifyFileName": false,
     "checkInvalidKey": true,
-    "checkSiteMap": true,
+    "checkSiteMap": false,
     "uploadWithSourceMap": true,
     "compileHotReLoad": false,
+    "useMultiFrameRuntime": false,
+    "useApiHook": true,
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
       "outputPath": ""
     },
+    "enableEngineNative": false,
     "useIsolateContext": true,
     "useCompilerModule": false,
     "userConfirmedUseCompilerModuleSwitch": false,
     "packNpmManually": false,
     "packNpmRelationList": [],
-    "minifyWXSS": true,
-    "useMultiFrameRuntime": false,
-    "useApiHook": true
+    "minifyWXSS": true
   },
   "compileType": "miniprogram",
   "libVersion": "2.13.0",
-  "appid": "wx62ff4ff261d85ff6",
+  "appid": "wx1390fefac4b96d5e",
   "projectname": "%E7%A6%8F%E5%A4%A7%E7%8C%AB%E7%8C%AB",
   "debugOptions": {
     "hidedInDevtools": []
