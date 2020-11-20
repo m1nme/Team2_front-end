@@ -1,0 +1,44 @@
+<!--pages/feed/feed.wxml-->
+<view class="begin">
+  <view class="text01">喂食记录</view>
+</view>
+
+<view class="line"></view>
+<view class='item'>
+  <image class="image" src="https://i.loli.net/2020/11/16/Xs7cAktNJKhHemu.jpg"></image>
+  <view class="title" >
+    猫猫1号
+    <text>\n</text>
+    <text>2020/10/01</text>
+  </view>
+</view>
+<view class="line"></view>
+<view class='item'>
+  <image class="image" src="https://i.loli.net/2020/11/16/Xs7cAktNJKhHemu.jpg"></image>
+  <view class="title" >
+    猫猫2号
+    <text>\n</text>
+    <text>2020/09/09</text>
+  </view>
+</view>
+<view class="line"></view>
+<view class="line"></view>
+<view class='item'>
+  <image class="image" src="https://i.loli.net/2020/11/16/VDoNHBmTpqcvrRX.png"></image>
+  <view class="title" >
+    猫猫3号
+    <text>\n</text>
+    <text>2020/11/14</text>
+  </view>
+</view>
+<view class="line"></view>
+<view class="line"></view>
+<view class='item'>
+  <image class="image" src="icon/love.png"></image>
+  <view class="title" >
+    猫猫4号
+    <text>\n</text>
+    <text>2020/09/30</text>
+  </view>
+</view>
+<view class="line"></view>
