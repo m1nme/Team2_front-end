@@ -1,18 +1,29 @@
 // pages/feed/feed.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
 
   },
+  onLoad:function(){
+    wx.request({      
+      url: 'https://iminx.cn/api/wxapp/getFeedLog/',
+      data:{
+        "token": "3a92bca2ee0899495da3b3ea8698b62d",
+        "op": "USER" 
+      },
+      
+        method:'post',
+      
+      header: {
+        'content-type': 'application/json' // 默认值
+     },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+      success:function(res){
+        console.log("网络请求成功",res)
+      },
+      fail:function(err){
+        console.log("网络请求失败",err)
+      }
+    })
   },
 
   /**

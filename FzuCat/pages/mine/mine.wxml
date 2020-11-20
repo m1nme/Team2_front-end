@@ -6,7 +6,7 @@
       <image class="user_icon" src="{{userinfo.avatarUrl}}"></image>
     </view>
     <view class="user_name_readme">
-      <view class="user_name">这里是用户名{{userinfo.nickName}}</view>
+      <view class="user_name">{{userinfo.nickName}}</view>
       <view class="user_readme">
         <text>您已经喂过猫猫{{userinfo.readme}}啦\n谢谢您对猫猫的关照</text>
       </view>
@@ -19,19 +19,13 @@
   <view class="title" >
     <navigator url="/pages/myAttention/myAttention" hover-class="navigator-hover">我的关注</navigator>
   </view>
-  <view class="detail2">
-    <text>></text>
-  </view>
 </view>
 <view class="line"></view>
  
 <view class='item'>
   <image class="icon" src="icon/评论.png"></image>
   <view class="title">
-    <navigator url="/pages/demo02/demo02" hover-class="navigator-hover">喂食记录</navigator>
-  </view>
-  <view class="detail2">
-    <text>></text>
+    <navigator url="/pages/feed/feed" hover-class="navigator-hover">喂食记录</navigator>
   </view>
 </view>
 <view class="line"></view>
@@ -41,9 +35,6 @@
   <view class="title">
     <navigator url="/pages/demo03/demo03" hover-class="navigator-hover">帖子及评论</navigator>
   </view>
-  <view class="detail2">
-    <text> ></text>
-  </view>
 </view>
 <view class="line"></view>
 
@@ -52,9 +43,6 @@
   <view class="title">
     <navigator url="/pages/demo04/demo04" hover-class="navigator-hover">设置</navigator>
   </view>
-  <view class="detail2">
-    <text> ></text>
-  </view>
 </view>
 <view class="line"></view>
 <view class="item">
@@ -62,10 +50,6 @@
   <view class="title">
     <navigator url="/pages/demo05/demo05" hover-class="navigator-hover">在线客服</navigator>
   </view>
-  <view class="detail2">
-    <text> ></text>
-  </view>
 </view>
 <view class="line"></view>
-
 <view class="hr"></view>
