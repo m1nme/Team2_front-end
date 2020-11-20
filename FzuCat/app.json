@@ -1,13 +1,42 @@
 {
   "pages":[
+    "pages/mine/mine",
+    "pages/homepage/homepage",
+    "pages/science/science",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/myAttention/myAttention"
   ],
   "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle":"black"
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#ff9900",
+    "navigationBarTitleText": "福大猫猫",
+    "navigationBarTextStyle":"white",
+    "enablePullDownRefresh":true
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor":"#ff9900",
+    "borderStyle":"black",
+    "list": [{
+    "pagePath":"pages/homepage/homepage",
+    "text":"首页",
+    "iconPath":"icon/home.png",
+    "selectedIconPath":"icon/_home.png"
+    },
+    {
+      "pagePath":"pages/science/science",
+      "text":"科普",
+      "iconPath":"icon/Book.png",
+      "selectedIconPath":"icon/_Book.png"
+      },
+      {
+        "pagePath":"pages/mine/mine",
+        "text":"我的",
+        "iconPath":"icon/my.png",
+        "selectedIconPath":"icon/_my.png"
+        }
+    ]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

@@ -1,0 +1,37 @@
+<!--pages/myAttention/myAttention.wxml-->
+<!--pages/myAttention/myAttention.wxml-->
+<view class="begin">
+  <view class="text01">关注的猫猫</view>
+</view>
+
+<view class="hr"></view>
+<view class='item'>
+  <image class="image" src="icon/love.png"></image>
+  <view class="title" >
+    猫猫1号
+  </view>
+</view>
+<view class="line"></view>
+<view class='item'>
+  <image class="image" src="icon/love.png"></image>
+  <view class="title" >
+    猫猫2号
+  </view>
+</view>
+<view class="line"></view>
+<view class="line"></view>
+<view class='item'>
+  <image class="image" src="icon/love.png"></image>
+  <view class="title" >
+    猫猫3号
+  </view>
+</view>
+<view class="line"></view>
+<view class="line"></view>
+<view class='item'>
+  <image class="image" src="icon/love.png"></image>
+  <view class="title" >
+    猫猫3号
+  </view>
+</view>
+<view class="line"></view>
