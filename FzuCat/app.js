@@ -23,6 +23,9 @@ App({
             },
             success(res) {
               console.log(res.data.msg)
+              console.log(res.data.data.token)
+
+              wx.setStorageSync('token', res.data.data.token)
             },
             fail(){
               console.log("登录失败")

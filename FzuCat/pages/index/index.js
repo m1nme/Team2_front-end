@@ -21,8 +21,29 @@ Page({
     this.data.catList.push({"id":"124","picUrl":"1244","records":["11月6日14：30 主食x1","11月6日19：30 鸡肉x1"]})
     console.log(this.data.catList.length)
   },
-  wxLogin:function(){
-    wx.login()
+
+  
+  getCatListByAddress:function(){
+     var token = wx.getStorageSync('token') //获取stroage的token
+    console.log(token);
+    wx.request({
+      method:"POST",
+      dataType:"json",
+      url: 'https://iminx.cn/api/wxapp/showCatsList/', //仅为示例，并非真实的接口地址
+      data: {
+        token: token, //带上token
+        address:"ALL"
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        console.log(res.data.msg)
+      },
+      fail(){
+        console.log("失败")
+      }
+    })
   }
 
 })
