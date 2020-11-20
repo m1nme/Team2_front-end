@@ -37,7 +37,7 @@
   </view>
 </view>
 <view class="line"></view>
-
+<!--
 <view class="item">
   <image class="icon" src="icon/设置.png" ></image>
   <view class="title">
@@ -45,6 +45,7 @@
   </view>
 </view>
 <view class="line"></view>
+-->
 <view class="item">
   <image class="icon" src="icon/phone.png"></image>
   <view class="title">
