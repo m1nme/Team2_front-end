@@ -1,0 +1,112 @@
+/* pages/post/post.wxss */
+.begin{
+  position: relative;
+  background-color: #ff9900;
+  height: 100rpx;
+  border-bottom-left-radius: 9px;
+  border-bottom-right-radius: 9px;
+}
+
+.headline {
+  position: absolute;
+  left: 40%;
+  top: 20%;
+  font-size: 38rpx;
+}
+
+.post {
+  position: relative;
+  display: flex;
+  height: 101px; 
+  line-height: 20px;
+  text-align: center;
+  border: 1px solid rgba(187, 187, 187, 100);
+}
+
+.text {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  position: relative;
+  padding-top: 18px;
+  padding-left: 18px;
+  color: rgba(16, 16, 16, 100);
+  font-size: 16px;
+  text-align: left;
+  font-family: PingFangSC-regular;
+}
+
+.content {
+  position: relative;
+  padding-top: 8px;
+  padding-left: 18px;
+  color: rgba(136, 136, 136, 100);
+  font-size: 14px;
+  text-align: left;
+  font-family: Helvetica-regular;
+  display: -webkit-box;  /*设置为弹性盒子*/
+  width: 264px;
+  -webkit-line-clamp: 1;  /*最多显示1行*/
+  overflow: hidden;  /*超出隐藏*/
+  text-overflow: ellipsis;  /*超出显示为省略号*/
+  -webkit-box-orient: vertical;
+  word-break: break-all;  /*强制英文单词自动换行*/
+  white-space: normal;
+}
+
+.tag {
+  position: relative;
+  padding-top: 8px;
+  padding-left: 18px;
+  color: rgba(252, 135, 54, 100);
+  font-size: 14px;
+  text-align: left;
+  font-family: PingFangSC-regular;
+}
+
+.amount {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+
+.iconBrowse {
+  position: relative;
+  width: 22px;
+  height: 22px; 
+  margin-left: -110px;
+  margin-top: 74px;
+}
+
+.numberBrowse{
+  margin-left: 8px;
+  margin-top: 75px;
+  color: rgba(170, 170, 170, 100);
+  font-size: 14px;
+  text-align: left;
+  font-family: PingFangSC-regular;
+}
+
+.iconComment {
+  position: relative;
+  width: 22px;
+  height: 22px; 
+  margin-top: 74px;
+  margin-left: 18px; 
+}
+
+.numberComment{
+  margin-left: 8px;
+  margin-top: 75px;
+  color: rgba(170, 170, 170, 100);
+  font-size: 14px;
+  text-align: left;
+  font-family: PingFangSC-regular;
+}
+
+.navigator-hover {
+  color:#ff9900;
+}
