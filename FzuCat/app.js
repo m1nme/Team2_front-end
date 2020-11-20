@@ -9,6 +9,27 @@ App({
     // 登录
     wx.login({
       success: res => {
+        console.log(res.code)
+        if (res.code) {
+          wx.request({
+            method:"POST",
+            dataType:"json",
+            url: 'https://iminx.cn/api/wxapp/login/', //仅为示例，并非真实的接口地址
+            data: {
+              code: res.code
+            },
+            header: {
+              'content-type': 'application/json' // 默认值
+            },
+            success(res) {
+              console.log(res.data.msg)
+            },
+            fail(){
+              console.log("登录失败")
+            }
+          })
+        }
+        else console.log('登录失败'+res.errMsg)
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
       }
     })
