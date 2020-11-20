@@ -1,11 +1,9 @@
 // pages/mine/mine.js
 Page({
   data:{
-    userinfo:{
       nickName:'呼啦呼啦',
       avatarUrl:'https://i.loli.net/2020/11/16/Xs7cAktNJKhHemu.jpg',
-      readme:'0',
-    }
+      readme:'0',  
   },
   onShow(){
     const userinfo=wx-wx.getStorageSync('userinfo');
@@ -16,9 +14,9 @@ Page({
     wx.request({
       url: 'https://iminx.cn/api/wxapp/changeUserInfo/',
       data:{
-        "token": "your_token",
-        "nickName":"故渊",
-        "avatarUrl":"https://thirdwx.qlogo.cn/mmopen/vi_32/0dAfHYgu3XIj2ACwX9IyR4S2rs6hTjPJzeGuNLZQQuRR7wILElvxv8et6VCeE9fpl7GbwdKWSyZic2bEfoRlvow/132"
+        token:token,
+        nickName:"故渊",
+        avatarUrl:"https://thirdwx.qlogo.cn/mmopen/vi_32/0dAfHYgu3XIj2ACwX9IyR4S2rs6hTjPJzeGuNLZQQuRR7wILElvxv8et6VCeE9fpl7GbwdKWSyZic2bEfoRlvow/132"
       },
       
       header: {

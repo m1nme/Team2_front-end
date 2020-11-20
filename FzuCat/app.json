@@ -1,6 +1,7 @@
 {
   "pages":[
     "pages/mine/mine",
+    "pages/service/service",
     "pages/feed/feed",
     "pages/homepage/homepage",
     "pages/science/science",

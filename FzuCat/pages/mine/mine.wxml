@@ -3,12 +3,12 @@
 <view class="line01"></view>
 <view class="user_info_wrap">
     <view class="user_info">
-      <image class="user_icon" src="{{userinfo.avatarUrl}}"></image>
+      <image class="user_icon" src="{{avatarUrl}}"></image>
     </view>
     <view class="user_name_readme">
-      <view class="user_name">{{userinfo.nickName}}</view>
+      <view class="user_name">{{nickName}}</view>
       <view class="user_readme">
-        <text>您已经喂过猫猫{{userinfo.readme}}啦\n谢谢您对猫猫的关照</text>
+        <text>您已经喂过猫猫{{readme}}啦\n谢谢您对猫猫的关照</text>
       </view>
     </view>
 </view>
@@ -48,7 +48,7 @@
 <view class="item">
   <image class="icon" src="icon/phone.png"></image>
   <view class="title">
-    <navigator url="/pages/demo05/demo05" hover-class="navigator-hover">在线客服</navigator>
+    <navigator url="/pages/service/service" hover-class="navigator-hover">在线客服</navigator>
   </view>
 </view>
 <view class="line"></view>
