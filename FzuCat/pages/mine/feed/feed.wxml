@@ -1,3 +1,4 @@
+<!--pages/mine/feed/feed.wxml-->
 <!--pages/feed/feed.wxml-->
 <view class="line"></view>
 <view class="begin">
@@ -43,3 +44,4 @@
   </view>
 </view>
 <view class="line"></view>
+

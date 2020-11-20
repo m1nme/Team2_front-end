@@ -1,6 +1,9 @@
 {
   "pages":[
     "pages/mine/mine",
+    "pages/mine/feed/feed",
+    "pages/mine/service/service",
+    "pages/mine/myAttention/myAttention",
     "pages/service/service",
     "pages/feed/feed",
     "pages/homepage/homepage",
@@ -31,13 +34,13 @@
       "text":"科普",
       "iconPath":"icon/Book.png",
       "selectedIconPath":"icon/_Book.png"
-      },
-      {
+    },
+    {
         "pagePath":"pages/mine/mine",
         "text":"我的",
         "iconPath":"icon/my.png",
         "selectedIconPath":"icon/_my.png"
-        }
+    }
     ]
   },
   "style": "v2",

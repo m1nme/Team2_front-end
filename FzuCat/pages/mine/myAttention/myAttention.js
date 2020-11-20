@@ -8,7 +8,7 @@ Page({
     wx.request({
       url: 'https://iminx.cn/api/wxapp/addCat/',
       data:{
-        token:"token", 
+        token:token, 
         catName: "大橘",
         catUrl:"https://iminx-1258939911.cos.ap-chengdu.myqcloud.com/fzucats/20201113230601.jpg"
       },

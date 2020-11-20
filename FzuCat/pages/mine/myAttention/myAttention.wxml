@@ -1,3 +1,4 @@
+<!--pages/mine/myAttention/myAttention.wxml-->
 <!--pages/myAttention/myAttention.wxml-->
 <!--pages/myAttention/myAttention.wxml-->
 <view class="line"></view>
@@ -35,3 +36,4 @@
   </view>
 </view>
 <view class="line"></view>
+

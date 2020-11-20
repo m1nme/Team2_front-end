@@ -17,7 +17,7 @@
 <view class='item'>
   <image class="icon" src="icon/love.png"></image>
   <view class="title" >
-    <navigator url="/pages/myAttention/myAttention" hover-class="navigator-hover">我的关注</navigator>
+    <navigator url="/pages/mine/myAttention/myAttention" hover-class="navigator-hover">我的关注</navigator>
   </view>
 </view>
 <view class="line"></view>
@@ -25,7 +25,7 @@
 <view class='item'>
   <image class="icon" src="icon/评论.png"></image>
   <view class="title">
-    <navigator url="/pages/feed/feed" hover-class="navigator-hover">喂食记录</navigator>
+    <navigator url="/pages/mine/feed/feed" hover-class="navigator-hover">喂食记录</navigator>
   </view>
 </view>
 <view class="line"></view>
@@ -48,7 +48,7 @@
 <view class="item">
   <image class="icon" src="icon/phone.png"></image>
   <view class="title">
-    <navigator url="/pages/service/service" hover-class="navigator-hover">在线客服</navigator>
+    <navigator url="/pages/mine/service/service" hover-class="navigator-hover">在线客服</navigator>
   </view>
 </view>
 <view class="line"></view>
