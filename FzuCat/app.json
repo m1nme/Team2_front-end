@@ -10,8 +10,21 @@
   },
   "pages":[
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/kepu/kepu"
   ],
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "/resource/image/2.jpg"
+    },
+    {
+      "pagePath": "pages/kepu/kepu",
+      "text": "档案",
+      "iconPath": "/resource/image/2.jpg"
+    }]
+  },
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
