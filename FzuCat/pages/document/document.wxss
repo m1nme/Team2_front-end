@@ -62,18 +62,32 @@
 }
 .followIcon{
   position: fixed;
-  width: 82rpx;
-  height: 82rpx;
+  width: 80rpx;
+  height: 80rpx;
   bottom: 5%;
   right: 22%;
 }
 .addIcon{
   position: fixed;
-  width: 82rpx;
-  height: 82rpx;
+  width: 80rpx;
+  height: 80rpx;
   bottom: 5%;
   right: 10%;
 }
+button {
+  margin: 0;
+  padding: 0;
+  background-color: inherit;
+  position: static;
+}
+
+button:after {
+  content: none;
+}
+button::after {
+  border: none;
+}
+
 .forumLink{
   position: fixed;
   top: 30%;
@@ -82,3 +96,4 @@
   font-size: smaller;
   color: orangered;
 }
+
