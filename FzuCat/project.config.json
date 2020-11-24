@@ -21,8 +21,6 @@
     "checkSiteMap": true,
     "uploadWithSourceMap": true,
     "compileHotReLoad": false,
-    "useMultiFrameRuntime": false,
-    "useApiHook": true,
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
@@ -31,13 +29,12 @@
     "useIsolateContext": true,
     "useCompilerModule": false,
     "userConfirmedUseCompilerModuleSwitch": false,
-    "packNpmManually": false,
-    "packNpmRelationList": [],
-    "minifyWXSS": true
+    "useMultiFrameRuntime": false,
+    "useApiHook": true
   },
   "compileType": "miniprogram",
   "libVersion": "2.13.0",
-  "appid": "wx3b71826a3908be3e",
+  "appid": "wx62ff4ff261d85ff6",
   "projectname": "%E7%A6%8F%E5%A4%A7%E7%8C%AB%E7%8C%AB",
   "debugOptions": {
     "hidedInDevtools": []
@@ -47,23 +44,53 @@
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
   "condition": {
-    "search": {
-      "list": []
-    },
-    "conversation": {
+    "plugin": {
       "list": []
     },
     "game": {
-      "list": []
-    },
-    "plugin": {
       "list": []
     },
     "gamePlugin": {
       "list": []
     },
     "miniprogram": {
-      "list": []
+      "list": [
+        {
+          "name": "pages/homepage/homepage",
+          "pathName": "pages/homepage/homepage",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mine/feed/feed",
+          "pathName": "pages/mine/feed/feed",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mine/myAttention/myAttention",
+          "pathName": "pages/mine/myAttention/myAttention",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mine/myAttention/myAttention",
+          "pathName": "pages/mine/science/science",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mine/index/index",
+          "pathName": "pages/mine/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "scene": null
+        }
+      ]
     }
   }
 }

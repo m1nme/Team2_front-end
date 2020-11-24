@@ -1,0 +1,93 @@
+/* pages/mine/mine.less */
+page{
+  background-color: #ffffff;
+}
+.user_info_wrap {
+  height: 20vh ;
+  background-color: #ff9900;
+  position: relative;
+  border-bottom-left-radius: 36rpx;
+  border-bottom-right-radius: 36rpx;
+}
+.user_info {
+  position: absolute;
+  width: 128rpx;
+  height: 128rpx;
+  left: 6%;
+  top: 20%;
+}
+.user_icon{
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+.user_name_readme{
+  position: absolute;
+  left: 28%;
+  top: 20%;
+  width: 500rpx;
+  height: 150rpx;
+}
+.user_name{
+  width: 470rpx;
+  height: 70rpx;
+  font-size: 17px;
+}
+.user_readme{
+  width: 470rpx;
+  height: 70rpx;
+  font-size: 14px;
+}
+ 
+.hr {
+  position: relative;
+  width: 100%;
+  height: 30rpx;
+  background-color: #ffffff;
+}
+ 
+.item {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+.icon{
+  position: absolute;
+  top: 25%;
+  left: 10%;
+  width:50rpx;
+  height: 50rpx;
+}
+ 
+.title {
+  position: relative;
+  left: 8%;
+  top: 20%;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  padding-left: 120rpx;
+  font-size: 30rpx;
+}
+ 
+.detail2 {
+  font-size: 30rpx;
+  position: absolute;
+  right: 20rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #888;
+}
+ 
+.line {
+  border: 2rpx solid #ccc;
+  opacity: 0.2;
+}
+
+.line01{
+  border: 1.4rpx solid #888;
+  opacity: 0.2;
+}
+.navigator-hover {
+  color:#ff9900;
+}
