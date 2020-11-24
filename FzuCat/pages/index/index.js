@@ -42,12 +42,15 @@ Page({
      }
    })
  },
+
+
   onLoad: function () {
     //授权登录
     wx.getUserInfo()
     app.checkLoginReadyCallback = res => {
       this.getCatListByAddress("一区")
     }
+
   },
   onReady:function(){
     this.changeTabs

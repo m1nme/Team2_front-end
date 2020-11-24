@@ -1,0 +1,99 @@
+/* pages/document/document.wxss */
+.box{
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  align-content:center;
+}
+
+.catImage{
+  position: relative;
+   height: 320rpx;
+   width: 570rpx;
+}
+.catImagePos{
+  display: flex;
+  position: absolute;
+  top: 2%;
+  left: 12%;
+  justify-content: center;
+  align-content:center ;
+}
+.catInfo{
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: baseline;
+  align-content: start;
+}
+.color{
+  position: absolute;
+  left: 15%;
+  top: 33%;
+}
+.sex{
+  position: absolute;
+  left:55%;
+  top: 33%;
+}
+.status{
+  position: absolute;
+  left: 15%;
+  top: 43%;
+}
+.character{
+  position: absolute;
+  left: 55%;
+  top:43%;
+}
+.newFeed{
+  position: absolute;
+  top: 55%;
+  left: 15%;
+}
+.titleFont{
+  font-weight: lighter;
+  font-size: smaller;
+  color: gray;
+}
+.pageFont{
+  font-weight: bold;
+}
+.followIcon{
+  position: fixed;
+  width: 80rpx;
+  height: 80rpx;
+  bottom: 5%;
+  right: 22%;
+}
+.addIcon{
+  position: fixed;
+  width: 80rpx;
+  height: 80rpx;
+  bottom: 5%;
+  right: 10%;
+}
+button {
+  margin: 0;
+  padding: 0;
+  background-color: inherit;
+  position: static;
+}
+
+button:after {
+  content: none;
+}
+button::after {
+  border: none;
+}
+
+.forumLink{
+  position: fixed;
+  top: 30%;
+  right: 6%;
+  font-weight: lighter;
+  font-size: smaller;
+  color: orangered;
+}
+
