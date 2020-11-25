@@ -1,6 +1,4 @@
 <!--pages/mine/mine.wxml-->
-
-<view class="line01"></view>
 <view class="user_info_wrap">
     <view class="user_info">
       <image class="user_icon" src="{{avatarUrl}}"></image>

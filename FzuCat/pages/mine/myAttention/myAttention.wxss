@@ -15,7 +15,7 @@ page{
   position: absolute;
   left: 40%;
   top: 20%;
-  font-size: 32rpx;
+  font-size: 36rpx;
 }
 .hr {
   position: relative;
@@ -28,25 +28,26 @@ page{
   position: relative;
   display: flex;
   flex-direction: row;
-  height: 200rpx;
-  background-color: #ffffff;
+  height: 140rpx;
 }
 .image{
   position: absolute;
-  top: 25%;
+  top: 16%;
   left: 10%;
-  width:130rpx;
-  height: 130rpx;
+  width:90rpx;
+  height: 90rpx;
+  border-radius: 50%;
 }
+ 
  
 .title {
   position: relative;
   left: 15%;
-  top: 10%;
-  padding-top: 30rpx;
-  padding-bottom: 20rpx;
+  top: 8%;
+  padding-top: 15px;
+  padding-bottom: 10px;
   padding-left: 100rpx;
-  font-size: 40rpx;
+  font-size: 32rpx;
 }
  
 .detail2 {
