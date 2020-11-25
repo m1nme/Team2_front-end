@@ -4,16 +4,19 @@
     <input class="text01" auto-focus selection-start="2px" selection-end="4" placeholder="" />
   </view>
 </view>
-
-<view class="line"></view>
-<view class='item'>
-  <image class="image" src="https://i.loli.net/2020/11/16/Xs7cAktNJKhHemu.jpg"></image>
-  <view class="title" >
-    猫猫1号
-    <text>\n</text>
-    <text>2020/10/01 14:30 罐头*1</text>
+<block wx:for="{{cat_list}}" wx:key="id">
+  <view class="line"></view>
+  <view class='item'>
+    <image class="image" src="{{item.catId}}"></image>
+    <view class="title" >
+      {{item.catId}}
+      <text>\n</text>
+      <text>{{item.time}} {{item.food}}</text>
+    </view>
   </view>
-</view>
+</block>
+
+
 
 <view class="line"></view>
 <view class='item'>
