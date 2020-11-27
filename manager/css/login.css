@@ -1,0 +1,20 @@
+.container{
+    display: flex;
+    align-items: right;
+    flex-direction: column;
+}
+
+	
+
+}
+.form-horizontal{
+	display: flex;
+	float: right;
+}
+	
+}
+#manager_login_form{
+    width: 20%;
+    margin-top: 60px;
+	
+}
