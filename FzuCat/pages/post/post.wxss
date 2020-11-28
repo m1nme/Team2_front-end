@@ -79,9 +79,10 @@
 }
 
 .amount {
-  position: relative;
+  position: absolute;
   display: flex;
   flex-direction: row;
+  right: 5%;  /*靠右*/
 }
 
 .iconBrowse {
@@ -93,6 +94,7 @@
 }
 
 .numberBrowse{
+  position: relative;
   margin-left: 8px;
   margin-top: 74px;
   color: rgba(170, 170, 170, 100);
@@ -110,6 +112,7 @@
 }
 
 .numberComment{
+  position: relative;
   margin-left: 8px;
   margin-top: 74px;
   color: rgba(170, 170, 170, 100);
