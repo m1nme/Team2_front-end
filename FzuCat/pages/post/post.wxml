@@ -1,5 +1,6 @@
 <!--pages/post/post.wxml-->
 <view class="begin">
+  <navigator class="back" url="/pages/mine">{{back_bj}}</navigator>
   <view class="headline">帖子及评论</view>
 </view>
 
@@ -14,9 +15,9 @@
   </view>
   <view class="amount">
     <image class="iconBrowse" src="/pages/post/icon/browse.svg"></image>
-    <text class="numberBrowse">852</text>
+    <text class="numberBrowse">浏览</text>
     <image class="iconComment" src="/pages/post/icon/comment.svg"></image>
-    <text class="numberComment">27</text>
+    <text class="numberComment">评论</text>
   </view>
 </view>
 </block>
@@ -31,9 +32,9 @@
   </view>
   <view class="amount">
     <image class="iconBrowse" src="/pages/post/icon/browse.svg"></image>
-    <text class="numberBrowse">113</text>
+    <text class="numberBrowse">浏览</text>
     <image class="iconComment" src="/pages/post/icon/comment.svg"></image>
-    <text class="numberComment">48</text>
+    <text class="numberComment">评论</text>
   </view>
 </view>
 
