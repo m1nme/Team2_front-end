@@ -17,7 +17,8 @@
 
     "pages/index/index",
     "pages/logs/logs",
-    "pages/kepu/kepu"
+    "pages/kepu/kepu",
+    "pages/document/document"
   ],
   "window":{
     "backgroundTextStyle":"dark",

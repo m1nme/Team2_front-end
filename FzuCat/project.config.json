@@ -18,7 +18,7 @@
     "scopeDataCheck": false,
     "uglifyFileName": false,
     "checkInvalidKey": true,
-    "checkSiteMap": true,
+    "checkSiteMap": false,
     "uploadWithSourceMap": true,
     "compileHotReLoad": false,
     "babelSetting": {
@@ -92,8 +92,9 @@
           "scene": null
         },
         {
-          "name": "档案",
+          "name": "pages/document/document",
           "pathName": "pages/document/document",
+          "query": "",
           "scene": null
         }
       ]

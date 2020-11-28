@@ -1,13 +1,13 @@
 <!--pages/document/document.wxml-->
-
+<view class="container">
 <view class="catImagePos">
  <image mode="{{image.aspectFill}}" src="{{catImageUrl}}" class="catImage">
  </image>
 </view>
-<view class="catInfo">
+<view class="catInfo" >
   <view class="color">
     <text class="titleFont">毛色：\n</text>
-    <text class="pageFont">{{color}}</text>
+    <text class="pageFont">{{catInfo.data.catColor}}</text>
   </view>
   <view class="sex">
     <text class="titleFont"> 性别：\n</text>
@@ -43,8 +43,9 @@
    			bindconfirm="confirm">
      <!-- 这里可以自由选择你的输入框类型<input type='text' placeholder="请输入内容" auto-focus/> -->
      <text class="pageFont">请注意喂食合适的食物</text>
-     <input type="text" placeholder="食物" auto-focus></input>
+     <input type="text" placeholder="食物" class="weui-input"auto-focus></input>
      <text class="pageFont">如果三小时内有喂食记录请减少喂食量</text>
      <input type="text" placeholder="分量" auto-focus></input>
    </modal>
+  </view>
    

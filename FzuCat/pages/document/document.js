@@ -1,4 +1,5 @@
 // pages/document/document.js
+const app = getApp()
 Page({
 
   /**
@@ -6,16 +7,11 @@ Page({
    */
   data: {
     //初始化隐藏模态输入框
+  catInfo:null,
   collected:true,
   hiddenmodalput: true,
-  color:"",
-  sex:"",
-  status:"",
-  char:"",
   catImageUrl:"/resource/image/2.jpg",
-  "followImage":"https://i.loli.net/2020/11/20/NZioqyA3jWU2Ca9.png",
-  "followedImage":"https://i.loli.net/2020/11/20/3Y9OGhH8LNxjJpn.png",
-  "nofollowImage":"https://i.loli.net/2020/11/20/NZioqyA3jWU2Ca9.png"
+  
 },
 modalinput: function () {
 this.setData({
@@ -34,11 +30,39 @@ this.setData({
 })
 },
 
+getCatInfoBycatId:function(catId){
+  var that=this;
+  var token=wx.getStorageInfoSync('token')//获取storge的token
+
+wx.request({
+  method:"POST",
+  dataType:"json",
+  url: 'https://iminx.cn/api/wxapp/getCatInfo/',
+  data:{
+    token:token,
+    catId:catId
+  },
+  header: {
+    'content-type': 'application/json' // 默认值
+  },
+  success(res){
+    
+    console.log("catInfo"+res.data.msg)
+    that.setData({catInfo:res.data.data})
+    console.log(that.data.catInfo)
+  },
+  fail(){
+    console.log("fail")
+  }
+})
+},
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    this.test();
+onLoad: function () {
+  wx.getUserInfo() 
+  app.checkLoginReadyCallback = res => this.getCatInfoBycatId("1")
+  this.test()
 },
 
 onCollectionTap:function(){//收藏按钮对应的事件函数
@@ -52,7 +76,7 @@ onCollectionTap:function(){//收藏按钮对应的事件函数
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+  
   },
 
   /**
