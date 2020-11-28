@@ -1,6 +1,7 @@
 // pages/post/post.js
 Page({
   data: {
+    back_bj: "<",
     minePost_list:[]
   },
   /**
