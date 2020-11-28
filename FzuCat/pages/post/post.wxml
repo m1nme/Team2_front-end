@@ -3,13 +3,14 @@
   <view class="headline">帖子及评论</view>
 </view>
 
+<block wx:for="{{minePost_list}}" wx:key="id">
 <view class="post">
   <view class="text">
     <view class="title">
-      <navigator url="/pages/" hover-class="navigator-hover">有谁知道它最近在哪吗?</navigator>
+      <navigator url="{{post.url}}" hover-class="navigator-hover">{{post.title}}</navigator>
     </view>
-    <view class="content">之前都在35栋楼下车库看到它，不知道现在在哪了</view>
-    <text class="time">2020-11-22 \t 14:48:58</text>
+    <view class="content">{{post.content}}</view>
+    <text class="time">{{post.time}}</text>
   </view>
   <view class="amount">
     <image class="iconBrowse" src="/pages/post/icon/browse.svg"></image>
@@ -18,6 +19,8 @@
     <text class="numberComment">27</text>
   </view>
 </view>
+</block>
+
 <view class="post">
   <view class="text">
     <view class="title">
