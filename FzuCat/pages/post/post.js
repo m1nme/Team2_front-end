@@ -1,9 +1,7 @@
 // pages/post/post.js
 Page({
 
-  /**
-   * 页面的初始数据
-   */
+
   data: {
 
   },
@@ -12,8 +10,22 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
-    
+    wx.request({      
+      url: 'https://iminx.cn/api/wxapp/getPostsLog/',
+      data:{
+        
+      },
+      method:'post',
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success:function(res){
+        console.log("网络请求成功",res)
+      },
+      fail:function(err){
+        console.log("网络请求失败",err)
+      }
+    })
   },
 
   /**
