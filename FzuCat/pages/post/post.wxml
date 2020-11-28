@@ -1,6 +1,5 @@
 <!--pages/post/post.wxml-->
 <view class="begin">
-  <navigator class="back" url="/pages/mine">{{back_bj}}</navigator>
   <view class="headline">帖子及评论</view>
 </view>
 

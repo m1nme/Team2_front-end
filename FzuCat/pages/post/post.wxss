@@ -6,14 +6,6 @@
   box-shadow: 0rpx 20rpx 10rpx 20rpx black outset;
 }
 
-.back {
-  position: absolute;
-  left: 3%;
-  top: 20%;
-  font-size: 38rpx;
-  color: white;
-}
-
 .headline {
   display: flex;
   position: relative;
@@ -31,7 +23,6 @@
   line-height: 20px;
   text-align: center;
   border: 1px solid rgba(187, 187, 187, 100);
-  box-shadow: 0rpx 20rpx 10rpx 50rpx black outset;
 }
 
 .text {
@@ -59,16 +50,15 @@
   font-size: 14px;
   text-align: left;
   font-family: Helvetica-regular;
-  display: -webkit-box;  /*设置为弹性盒子*/
+  display: -webkit-box;     /*设置为弹性盒子*/
   width: 264px;
-  -webkit-line-clamp: 1;  /*最多显示1行*/
-  overflow: hidden;  /*超出隐藏*/
+  -webkit-line-clamp: 1;    /*最多显示1行*/
+  overflow: hidden;         /*超出隐藏*/
   text-overflow: ellipsis;  /*超出显示为省略号*/
   -webkit-box-orient: vertical;
-  word-break: break-all;  /*强制英文单词自动换行*/
+  word-break: break-all;    /*强制英文单词自动换行*/
   white-space: normal;
 }
-
 
 .time {
   position: relative;
