@@ -65,7 +65,7 @@ wx.request({
    */
 onLoad: function () {
   wx.getUserInfo() 
-  app.checkLoginReadyCallback = res => this.getCatInfoBycatId("1")
+  res => this.getCatInfoBycatId("1")
   this.test()
 },
 
