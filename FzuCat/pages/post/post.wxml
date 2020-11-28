@@ -9,9 +9,7 @@
       <navigator url="/pages/" hover-class="navigator-hover">有谁知道它最近在哪吗?</navigator>
     </view>
     <view class="content">之前都在35栋楼下车库看到它，不知道现在在哪了</view>
-    <view class="tag">
-      <navigator url="/pages/" hover-class="navigator-hover">#求助</navigator>
-    </view>
+    <text class="time">2020-11-22 \t 14:48:58</text>
   </view>
   <view class="amount">
     <image class="iconBrowse" src="/pages/post/icon/browse.svg"></image>
@@ -26,9 +24,7 @@
       <navigator url="/pages/" hover-class="navigator-hover">猫猫好像受伤了</navigator>
     </view>
     <view class="content">耳朵背后秃了一块，唉……</view>
-    <view class="tag">
-      <navigator url="/pages/" hover-class="navigator-hover">#附图</navigator>
-    </view>
+    <text class="time">2020-11-24 \t 19:30:58</text>
   </view>
   <view class="amount">
     <image class="iconBrowse" src="/pages/post/icon/browse.svg"></image>
