@@ -11,7 +11,11 @@ Page({
   collected:true,
   hiddenmodalput: true,
   catImageUrl:"/resource/image/2.jpg",
-  
+  color:"",
+  sex:"",
+  status:"",
+  char:""
+
 },
 modalinput: function () {
 this.setData({

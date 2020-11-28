@@ -7,7 +7,7 @@
 <view class="catInfo" >
   <view class="color">
     <text class="titleFont">毛色：\n</text>
-    <text class="pageFont">{{catInfo.data.catColor}}</text>
+    <text class="pageFont">{{color}}</text>
   </view>
   <view class="sex">
     <text class="titleFont"> 性别：\n</text>
