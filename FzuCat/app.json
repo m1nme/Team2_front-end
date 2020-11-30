@@ -14,7 +14,7 @@
     "pages/mine/feed/feed",
     "pages/mine/service/service",
     "pages/mine/myAttention/myAttention",
-
+    "pages/index/scope_cat/scope_cat",
     "pages/index/index",
     "pages/logs/logs",
     "pages/kepu/kepu"
