@@ -1,5 +1,4 @@
 <!--pages/service/service.wxml-->
-<view class="line01"></view>
 <view class="begin">
   <view class="text01">联系我们</view>
 </view>
@@ -8,5 +7,5 @@
   <text>关于"福大猫猫"\n</text>
   <text>有任何问题或建议可以联系我们\n</text>
   <text>联系方式：\n</text>
-  <text>2396649622@qq.com</text>
+  <text>邮箱：2396649622@qq.com</text>
 </view>

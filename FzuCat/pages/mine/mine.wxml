@@ -1,12 +1,12 @@
 <!--pages/mine/mine.wxml-->
 <view class="user_info_wrap">
     <view class="user_info">
-      <image class="user_icon" src="{{avatarUrl}}"></image>
+      <image class="user_icon" src="{{userinfo.avatarUrl}}"></image>
     </view>
     <view class="user_name_readme">
-      <view class="user_name">{{nickName}}</view>
+      <view class="user_name">{{userinfo.nickName}}</view>
       <view class="user_readme">
-        <text>您已经喂过猫猫{{readme}}啦\n谢谢您对猫猫的关照</text>
+        <text>您已经喂过猫猫1次啦\n谢谢您对猫猫的关照</text>
       </view>
     </view>
 </view>
@@ -31,7 +31,7 @@
 <view class='item'>
   <image class="icon" src="icon/markbook.png"></image>
   <view class="title">
-    <navigator url="/pages/demo03/demo03" hover-class="navigator-hover">帖子及评论</navigator>
+    <navigator url="/pages/mine/minepost/minepost" hover-class="navigator-hover">帖子及评论</navigator>
   </view>
 </view>
 <view class="line"></view>

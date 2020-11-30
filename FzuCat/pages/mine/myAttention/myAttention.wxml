@@ -4,28 +4,18 @@
   <view class="text01">关注的猫猫</view>
 </view>
 <view class="hr"></view>
-<view class='item'>
-  <image class="image" src="{{catUrl}}"></image>
-  <view class="title" >
-    {{catName}}
-  </view>
-</view>
-<view class="line"></view>
-<view class='item'>
-  <image class="image" src="{{catUrl}}"></image>
-  <view class="title" >
-    {{catName}}
-  </view>
-</view>
 
-<view class="line"></view>
-<view class='item'>
-  <image class="image" src="{{catUrl}}"></image>
-  <view class="title" >
-    {{catName}}
+<block wx:for="{{my_cat}}" wx:key="catId">
+  <view class="line"></view>
+  <view class='item'>
+    <image class="image" src="{{item.catUrl}}"></image>
+    <view class="title" >
+      {{item.catName}}
+    </view>
   </view>
-</view>
+</block>
 
+<!--
 <view class="line"></view>
 <view class='item'>
   <image class="image" src="{{catUrl}}"></image>
@@ -33,5 +23,6 @@
     {{catName}}
   </view>
 </view>
+-->
 
 

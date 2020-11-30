@@ -1,23 +1,26 @@
 <!--pages/feed/feed.wxml-->
 <view class="begin">
-  <view>
-    <input class="text01" auto-focus selection-start="2px" selection-end="4" placeholder="" />
-  </view>
+    <view class="text01">喂食记录</view>
+    <!--<input class="text01" auto-focus selection-start="2px" 
+      selection-end="4" placeholder="" />-->
 </view>
-<block wx:for="{{cat_list}}" wx:key="id">
+
+<view class="hr"></view>
+
+<block wx:for="{{cat_list}}" wx:key="catId">
   <view class="line"></view>
   <view class='item'>
-    <image class="image" src="{{item.catId}}"></image>
+    <image class="image" src="{{item.userUrl}}"></image>
     <view class="title" >
-      {{item.catId}}
+      {{item.userName}}
       <text>\n</text>
-      <text>{{item.time}} {{item.food}}</text>
+      <text>{{item.time}}  {{item.food}}</text>
     </view>
   </view>
 </block>
 
 
-
+<!--
 <view class="line"></view>
 <view class='item'>
   <image class="image" src="https://i.loli.net/2020/11/16/Xs7cAktNJKhHemu.jpg"></image>
@@ -27,8 +30,7 @@
     <text>2020/09/09</text>
   </view>
 </view>
-
-<view class="line"></view>
+<view class="line"></view>-->
 
 
 

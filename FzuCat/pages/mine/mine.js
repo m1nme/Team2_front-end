@@ -1,9 +1,11 @@
 // pages/mine/mine.js
 Page({
   data:{
-      nickName:'呼啦呼啦',
-      avatarUrl:'https://i.loli.net/2020/11/16/Xs7cAktNJKhHemu.jpg',
-      readme:'0',  
+    userinfo:
+    {  
+      nickName: "M1N",
+      avatarUrl: "https://iminx-1258939911.cos.ap-chengdu.myqcloud.com/fzucats/20201113230601.jpg"
+    } 
   },
   onShow(){
     const userinfo=wx-wx.getStorageSync('userinfo');
@@ -12,19 +14,19 @@ Page({
    //网络请求
   onLoad:function(){
     wx.request({
-      url: 'https://iminx.cn/api/wxapp/changeUserInfo/',
-      data:{
-        token:token,
-        nickName:"故渊",
-        avatarUrl:"https://thirdwx.qlogo.cn/mmopen/vi_32/0dAfHYgu3XIj2ACwX9IyR4S2rs6hTjPJzeGuNLZQQuRR7wILElvxv8et6VCeE9fpl7GbwdKWSyZic2bEfoRlvow/132"
+      url: 'https://iminx.cn/api/wxapp/getUserInfo/',
+      date:{
+        token: "3a92bca2ee0899495da3b3ea8698b62d"
       },
-      
+      method:'post',
       header: {
         'content-type': 'application/json' // 默认值
       },
-      method:'post',
-      success:function(res){
-        console.log("网络请求成功",res)
+      success:(res) => {
+        console.log("网络请求成功",res.data.userinfo)
+        this.setData({
+          userinfo:res.data.userinfo
+        })
       },
       fail:function(err){
         console.log("网络请求失败",err)
