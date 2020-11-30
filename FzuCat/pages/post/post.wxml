@@ -3,14 +3,14 @@
   <view class="headline">帖子及评论</view>
 </view>
 
-<block wx:for="{{minePost_list}}" wx:key="id">
+<block wx:for="{{minePost_list}}" wx:key="postId">
 <view class="post">
   <view class="text">
     <view class="title">
-      <navigator url="{{post.url}}" hover-class="navigator-hover">{{post.title}}</navigator>
+      <navigator url="{{post.url}}" hover-class="navigator-hover">{{item.title}}</navigator>
     </view>
-    <view class="content">{{post.content}}</view>
-    <text class="time">{{post.time}}</text>
+    <!-- <view class="content">{{item.content}}</view> -->
+    <text class="time">{{item.time}}</text>
   </view>
   <view class="amount">
     <image class="iconBrowse" src="/pages/post/icon/browse.svg"></image>
@@ -20,22 +20,6 @@
   </view>
 </view>
 </block>
-
-<view class="post">
-  <view class="text">
-    <view class="title">
-      <navigator url="/pages/" hover-class="navigator-hover">猫猫好像受伤了</navigator>
-    </view>
-    <view class="content">耳朵背后秃了一块，唉……</view>
-    <text class="time">2020-11-24 \t 19:30:58</text>
-  </view>
-  <view class="amount">
-    <image class="iconBrowse" src="/pages/post/icon/browse.svg"></image>
-    <text class="numberBrowse">浏览</text>
-    <image class="iconComment" src="/pages/post/icon/comment.svg"></image>
-    <text class="numberComment">评论</text>
-  </view>
-</view>
 
 
 
