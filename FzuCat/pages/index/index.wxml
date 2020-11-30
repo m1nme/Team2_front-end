@@ -1,64 +1,85 @@
 <!--index.wxml-->
 <view class="container">
-	<view class="center-container">
+	<view style="width:100%" >
+		<image bindtap="gotoScope" data-scope="一区" class="map-icon" src="../../resource/cat_icon/地图icon 1.jpg" style="margin-top:130rpx;margin-left:200rpx"></image>
+		<image bindtap="gotoScope" data-scope="文楼" class="map-icon" src="../../resource/cat_icon/地图icon 2.jpg" style="margin-top:100rpx;margin-left:620rpx"></image>
+		<image bindtap="gotoScope" data-scope="三区" class="map-icon" src="../../resource/cat_icon/地图icon 3.jpg" style="margin-top:330rpx;margin-left:200rpx"></image>
+		<image bindtap="gotoScope" data-scope="科技园" class="map-icon" src="../../resource/cat_icon/地图icon 4.jpg" style="margin-top:330rpx;margin-left:600rpx"></image>
 		<image style="width:100%" src="../../resource/image/fzumap.jpg"></image>
 	</view>
 
 	<view class="center-container">
 		<l-tabs bind:linchange="changeTabs" animated="{{false}}" swipeable="{{true}}" style="width:100%" l-active-class="l-active-class" l-line-class="l-line-class">
-			<l-tabpanel tab="一区" key="one" slot="one">
+			<l-tabpanel tab="一区" key="一区" slot="一区">
 				<view class="tab-content">
 
-					<l-skeleton loading="{{false}}" rows="1" avatar="{{true}}" avatar-size="60rpx" avatar-shape="circle" title-width="240rpx" rows-width="{{['600rpx']}}" rows-height="30rpx">
+					<l-skeleton style="width:100%" paragraph="{{true}}" loading="{{skeletonLoading}}" rows="20" avatar="{{true}}" avatar-size="60rpx" avatar-shape="circle" title-width="240rpx" rows-width="{{['600rpx']}}" rows-height="30rpx">
 						<!-- 插槽内容 -->
-						<view class="container" wx:for="{{catList}}" wx:key="item">
-
-
-							<l-card type="avatar" full="{{true}}" image="/resource/image/2.jpg" title="做一个热爱生活的人！">
-								<view class="content">
-									大雄要死掉了,他对妻子说:我死之后你找一个男人我就在地下打一一个滚。
-									说完就咽气了。某天...
-								</view>
+						<view class="container block" wx:for="{{catList['一区']}}" wx:key="item">
+							<l-card style="width:100%" l-img-class="l-img-class" type="avatar" full="{{true}}" image="{{item.catUrl}}" title="{{item.catName}}" data-catId="{{item.catId}}">
 							</l-card>
-
-							<!-- <view class="cat-card">
-								<l-avatar src="/resource/image/2.jpg" />
-                <view class="text-area">
-                      <view>{item.records[0]}</view>
-                      <view>{item.records[1]}</view>
-                </view>
-							</view> -->
+							<view class="black-line"></view>
+						</view>
+						<view />
+					</l-skeleton>
+					
+				</view>
+			</l-tabpanel>
+			<l-tabpanel tab="三区" key="三区" slot="三区">
+				<view class="tab-content">
+					<l-skeleton style="width:100%" paragraph="{{true}}" loading="{{skeletonLoading}}" rows="20" avatar="{{true}}" avatar-size="60rpx" avatar-shape="circle" title-width="240rpx" rows-width="{{['600rpx']}}" rows-height="30rpx">
+						<!-- 插槽内容 -->
+						<view class="container block" wx:for="{{catList['三区']}}" wx:key="item">
+							<l-card style="width:100%" l-img-class="l-img-class" type="avatar" full="{{true}}" image="{{item.catUrl}}" title="{{item.catName}}" data-catId="{{item.catId}}">
+							</l-card>
+							<view class="black-line"></view>
 						</view>
 						<view />
 					</l-skeleton>
 
 				</view>
 			</l-tabpanel>
-			<l-tabpanel tab="三区" key="two" slot="two">
-				<view class="tab-content">
-					<l-skeleton loading="{{true}}" rows="1" avatar="{{true}}" avatar-size="60rpx" avatar-shape="circle" title-width="240rpx" rows-width="{{['440rpx']}}" rows-height="30rpx">
-						<!-- 插槽内容 -->
-						<view />
-					</l-skeleton>
-
-				</view>
-			</l-tabpanel>
 			
-			<l-tabpanel tab="科技园" key="three" slot="three">
+			<l-tabpanel tab="科技园" key="科技园" slot="科技园">
 				<view class="tab-content">
-					<l-skeleton loading="{{true}}" rows="1" avatar="{{true}}" avatar-size="60rpx" avatar-shape="circle" title-width="240rpx" rows-width="{{['4440rpx']}}" rows-height="30rpx">
+					<l-skeleton style="width:100%" paragraph="{{true}}" loading="{{skeletonLoading}}" rows="20" avatar="{{true}}" avatar-size="60rpx" avatar-shape="circle" title-width="240rpx" rows-width="{{['600rpx']}}" rows-height="30rpx">
 						<!-- 插槽内容 -->
+						<view class="container block" wx:for="{{catList['科技园']}}" wx:key="item">
+							<l-card style="width:100%" l-img-class="l-img-class" type="avatar" full="{{true}}" image="{{item.catUrl}}" title="{{item.catName}}" data-catId="{{item.catId}}">
+							</l-card>
+							<view class="black-line"></view>
+						</view>
 						<view />
 					</l-skeleton>
 				</view>
 			</l-tabpanel>
-			<l-tabpanel tab="文楼" key="four" slot="four">
-				<view class="tab-content">面板</view>
+			<l-tabpanel tab="文楼" key="文楼" slot="文楼">
+				<view class="tab-content">
+					<l-skeleton style="width:100%" paragraph="{{true}}" loading="{{skeletonLoading}}" rows="20" avatar="{{true}}" avatar-size="60rpx" avatar-shape="circle" title-width="240rpx" rows-width="{{['600rpx']}}" rows-height="30rpx">
+						<!-- 插槽内容 -->
+						<view class="container block" wx:for="{{catList['文楼']}}" wx:key="item">
+							<l-card style="width:100%" l-img-class="l-img-class" type="avatar" full="{{true}}" image="{{item.catUrl}}" title="{{item.catName}}" data-catId="{{item.catId}}">
+							</l-card>
+							<view class="black-line"></view>
+						</view>
+						<view />
+					</l-skeleton>
+				</view>
 			</l-tabpanel>
-			<l-tabpanel tab="其他" key="five" slot="five">
-				<view class="tab-content">面板</view>
+			<l-tabpanel tab="其他" key="ALL" slot="ALL">
+				<view class="tab-content">
+					<l-skeleton style="width:100%" paragraph="{{true}}" loading="{{skeletonLoading}}" rows="20" avatar="{{true}}" avatar-size="60rpx" avatar-shape="circle" title-width="240rpx" rows-width="{{['600rpx']}}" rows-height="30rpx">
+						<!-- 插槽内容 -->
+						<view class="container block" wx:for="{{catList['ALL']}}" wx:key="item">
+							<l-card style="width:100%" l-img-class="l-img-class" type="avatar" full="{{true}}" image="{{item.catUrl}}" title="{{item.catName}}" data-catId="{{item.catId}}">
+							</l-card>
+							<view class="black-line"></view>
+						</view>
+						<view />
+					</l-skeleton>
+				</view>
 			</l-tabpanel>
 		</l-tabs>
 	</view>
-
+	
 </view>

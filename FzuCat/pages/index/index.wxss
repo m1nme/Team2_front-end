@@ -1,4 +1,8 @@
 /**index.wxss**/
+
+page{
+  background-color: rgba(238, 238, 238, 100);
+}
 .userinfo {
   display: flex;
   flex-direction: column;
@@ -39,4 +43,32 @@
 .text-area{
   display: flex;
   flex-direction: column;
+}
+
+.l-img-class{
+  width: 100rpx !important;
+  height: 100rpx !important;
+}
+
+.l-card-class{
+  width: 100% !important;
+}
+
+.map-icon{
+  position: absolute;
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  z-index: 3;
+  border: 7rpx solid #E5407A
+}
+
+.black-line{
+  width: 90%;
+  height: 3rpx;
+  background-color:  rgba(238, 238, 238, 100);
+}
+
+.block{
+  background-color: #FFFFFF;
 }
