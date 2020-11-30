@@ -7,7 +7,7 @@
 <view class="post">
   <view class="text">
     <view class="title">
-      <navigator url="{{post.url}}" hover-class="navigator-hover">{{item.title}}</navigator>
+      <navigator url="{{item.url}}" hover-class="navigator-hover">{{item.title}}</navigator>
     </view>
     <text class="time">{{item.time}}</text>
   </view>
