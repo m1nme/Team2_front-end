@@ -1,10 +1,10 @@
 <!--pages/mine/mine.wxml-->
 <view class="user_info_wrap">
     <view class="user_info">
-      <image class="user_icon" src="{{userinfo.avatarUrl}}"></image>
+      <image class="user_icon" src="{{userInfo.avatarUrl}}"></image>
     </view>
     <view class="user_name_readme">
-      <view class="user_name">{{userinfo.nickName}}</view>
+      <view class="user_name">{{userInfo.nickName}}</view>
       <view class="user_readme">
         <text>您已经喂过猫猫1次啦\n谢谢您对猫猫的关照</text>
       </view>
@@ -52,3 +52,4 @@
 </view>
 <view class="line"></view>
 <view class="hr"></view>
+<button bindtap="getUserInfoByuserId"></button>

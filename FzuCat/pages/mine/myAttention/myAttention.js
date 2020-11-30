@@ -10,11 +10,13 @@ Page({
     ]
   },
   onLoad:function(){
+    var token = wx.getStorageSync('token')
     wx.request({
       url: 'https://iminx.cn/api/wxapp/showLikesLog/',
       method:'post',
+      dataType:"json",
       data:{
-        token:"3a92bca2ee0899495da3b3ea8698b62d", 
+        token:token, 
         TYPE: "CAT",
         ID:"2"
       },

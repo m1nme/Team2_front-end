@@ -13,11 +13,13 @@ Page({
     ]
   },
   onLoad:function(){
+    var token = wx.getStorageSync('token')
     wx.request({      
       url: 'https://iminx.cn/api/wxapp/getFeedLog/',
       method:'post',
+      dataType:"json",
       data:{
-        token: "3a92bca2ee0899495da3b3ea8698b62d",
+        token: token,
         op: "USER",
       },
       header: {

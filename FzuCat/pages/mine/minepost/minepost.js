@@ -11,15 +11,15 @@ Page({
       }
     ]
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
+    var token = wx.getStorageSync('token')
     wx.request({      
       url: 'https://iminx.cn/api/wxapp/getPostsLog/',
       method:'post',
+      dataType:"json",
+
       data:{
-        token: "3a92bca2ee0899495da3b3ea8698b62d"
+        token: token
       },
 
       header: {

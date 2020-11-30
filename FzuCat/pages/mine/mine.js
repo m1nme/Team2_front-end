@@ -1,35 +1,36 @@
 // pages/mine/mine.js
 Page({
   data:{
-    userinfo:
+    userInfo:
     {  
       nickName: "M1N",
       avatarUrl: "https://iminx-1258939911.cos.ap-chengdu.myqcloud.com/fzucats/20201113230601.jpg"
     } 
   },
-  onShow(){
-    const userinfo=wx-wx.getStorageSync('userinfo');
-    this.setData(userinfo)
-  },
+
    //网络请求
-  onLoad:function(){
+   getUserInfoByuserId:function(){
+    var token = wx.getStorageSync('token')
+    var that = this;
     wx.request({
       url: 'https://iminx.cn/api/wxapp/getUserInfo/',
+      dataType:"json",
       date:{
-        token: "3a92bca2ee0899495da3b3ea8698b62d"
+        token: token,
       },
       method:'post',
       header: {
         'content-type': 'application/json' // 默认值
       },
-      success:(res) => {
-        console.log("网络请求成功",res.data.userinfo)
-        this.setData({
-          userinfo:res.data.userinfo
+      success(res){
+        console.log("userInfo "+res.data.msg)
+        console.log(token)
+        that.setData({
+          userInfo:res.data.data
         })
       },
-      fail:function(err){
-        console.log("网络请求失败",err)
+      fail(){
+        console.log("网络请求失败")
       }
     })
   }

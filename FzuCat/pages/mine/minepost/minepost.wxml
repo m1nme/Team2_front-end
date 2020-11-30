@@ -7,7 +7,7 @@
   <view class="post">
     <view class="text">
       <view class="title">
-        <navigator url="{{post.url}}" hover-class="navigator-hover">{{item.title}}</navigator>
+        {{item.title}}
       </view>
       <!--<view class="content">{{post.content}}</view>-->
       <text class="time">{{item.time}}</text>
@@ -20,7 +20,6 @@
     </view>
   </view>
 </block>
-
 <!--<view class="post">
   <view class="text">
     <view class="title">
