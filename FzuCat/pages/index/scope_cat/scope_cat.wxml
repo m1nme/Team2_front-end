@@ -1,0 +1,39 @@
+<!--pages/index/scope_cat/scope_cat.wxml-->
+<view class="container">
+  <view class="container block">
+    <view style="float:left;width:100%">
+      <view class="cat-title">常驻猫</view>
+    </view>
+    <view class="hori-list">
+      <view wx:for="{{catList}}" wx:key="item">
+        <image class="cat-avater" src="{{item.catUrl}}"></image>
+      </view>
+    </view>
+  </view>
+
+  <view style="margin-top:20rpx" class="container block">
+    <view style="float:left;width:100%">
+      <view class="cat-title">饿了猫</view>
+
+      <view class="container block" style="width:100%" wx:for="{{catList}}" wx:key="item">
+        <l-card style="width:100%" l-img-class="l-img-class" type="avatar" full="{{true}}" image="{{item.catUrl}}" title="{{item.catName}}" data-catId="{{item.catId}}">
+              </l-card>
+              <view class="black-line"></view>
+              </view>
+    </view>
+  </view>
+
+  <view style="margin-top:20rpx" class="container block">
+    <view style="float:left;width:100%">
+      <view class="cat-title">最新猫帖</view>
+    </view>
+    <view class="hori-list">
+      <view wx:for="{{catList}}" wx:key="item">
+        <image class="cat-avater" src="{{item.catUrl}}"></image>
+      </view>
+    </view>
+  </view>
+
+  <button bindtap="getInfo">123</button>
+
+</view>

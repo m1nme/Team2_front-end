@@ -14,8 +14,34 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+function uploadImage(){
+  var _this=this
+  wx.chooseImage({
+    count: 1,
+    sizeType:['ortginal','compressed'],
+    sourceType:['album','camera'],
+    success:function(res){
+      const tempFilePaths = res.tempFilePaths
+      console.log(tempFilePaths)
+      wx.uploadFile({
+        filePath: tempFilePaths[0],
+        name: 'image',
+        url: 'https://iminx.cn/api/wxapp/uploadImg/',
+        method: 'POST',
+        formData: {
+          'token': 'your_token'
+        },
+        success (res){
+          const data = res.data
+          console.log(data)
+        }
+      })
+    }
+  })
+}
+
 
 module.exports = {
-  formatTime: formatTime
-
+  formatTime: formatTime,
+  uploadImage: uploadImage
 }  
