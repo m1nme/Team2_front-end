@@ -4,6 +4,7 @@
 </view>
 
 <block wx:for="{{minePost_list}}" wx:key="postId">
+<view class="hr"></view>
 <view class="post">
   <view class="text">
     <view class="title">
