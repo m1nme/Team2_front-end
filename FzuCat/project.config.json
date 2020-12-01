@@ -46,29 +46,59 @@
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
   "condition": {
-    "search": {
-      "current": -1,
-      "list": []
-    },
-    "conversation": {
-      "current": -1,
+    "plugin": {
       "list": []
     },
     "game": {
-      "current": -1,
-      "list": []
-    },
-    "plugin": {
-      "current": -1,
       "list": []
     },
     "gamePlugin": {
-      "current": -1,
       "list": []
     },
     "miniprogram": {
-      "current": -1,
-      "list": []
+      "list": [
+        {
+          "name": "pages/homepage/homepage",
+          "pathName": "pages/homepage/homepage",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mine/feed/feed",
+          "pathName": "pages/mine/feed/feed",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mine/myAttention/myAttention",
+          "pathName": "pages/mine/myAttention/myAttention",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mine/myAttention/myAttention",
+          "pathName": "pages/mine/science/science",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mine/index/index",
+          "pathName": "pages/mine/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "档案",
+          "pathName": "pages/document/document",
+          "scene": null
+        }
+      ]
     }
   }
 }

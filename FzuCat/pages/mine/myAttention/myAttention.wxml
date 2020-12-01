@@ -9,11 +9,14 @@
   <view class="line"></view>
   <view class='item'>
     <image class="image" src="{{item.catUrl}}"></image>
-    <view class="title" >
+    <view class="title">
       {{item.catName}}
     </view>
   </view>
 </block>
+
+<button bindtap="getAttentionInfoByuserId"></button>
+
 
 <!--
 <view class="line"></view>

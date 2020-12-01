@@ -1,12 +1,20 @@
 {
+
+  "usingComponents": {
+    "l-button": "lin-ui/button/index",
+    "l-skeleton":"lin-ui/skeleton/index",
+    "l-tabs":"lin-ui/tabs/index",
+    "l-tabpanel":"lin-ui/tabpanel/index",
+    "l-avatar":"lin-ui/avatar/index",
+    "l-card":"lin-ui/card/index"
+  },
   "pages":[
     "pages/mine/mine",
     "pages/mine/minepost/minepost",
     "pages/mine/feed/feed",
     "pages/mine/service/service",
     "pages/mine/myAttention/myAttention",
-    "pages/homepage/homepage",
-    "pages/science/science",
+    "pages/kepu/kepu",
     "pages/index/index",
     "pages/logs/logs"
   ],
@@ -22,13 +30,13 @@
     "selectedColor":"#ff9900",
     "borderStyle":"black",
     "list": [{
-    "pagePath":"pages/homepage/homepage",
+    "pagePath":"pages/index/index",
     "text":"首页",
     "iconPath":"icon/home.png",
     "selectedIconPath":"icon/_home.png"
     },
     {
-      "pagePath":"pages/science/science",
+      "pagePath":"pages/kepu/kepu",
       "text":"科普",
       "iconPath":"icon/Book.png",
       "selectedIconPath":"icon/_Book.png"

@@ -1,17 +1,76 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
+	<view class="center-container">
+		<image style="width:100%" src="../../resource/image/fzumap.jpg"></image>
+	</view>
 
+	<view class="center-container">
+		<l-tabs bind:linchange="changeTabs" animated="{{false}}" swipeable="{{true}}" style="width:100%" l-active-class="l-active-class" l-line-class="l-line-class">
+			<l-tabpanel tab="一区" key="一区" slot="一区">
+				<view class="tab-content">
 
+					<l-skeleton style="width:100%" paragraph="{{true}}" loading="{{skeletonLoading}}" rows="1" avatar="{{true}}" avatar-size="60rpx" avatar-shape="circle" title-width="240rpx" rows-width="{{['600rpx']}}" rows-height="30rpx">
+						<!-- 插槽内容 -->
+						<view class="container" wx:for="{{catList}}" wx:key="item">
+							<l-card style="width:100%" l-img-class="l-img-class" type="avatar" full="{{true}}" image="{{item.catUrl}}" title="{{item.catName}}" data-catId="{{item.catId}}">
+							</l-card>
+						</view>
+						<view />
+					</l-skeleton>
+					
+				</view>
+			</l-tabpanel>
+			<l-tabpanel tab="三区" key="三区" slot="三区">
+				<view class="tab-content">
+					<l-skeleton style="width:100%" paragraph="{{true}}" loading="{{skeletonLoading}}" rows="1" avatar="{{true}}" avatar-size="60rpx" avatar-shape="circle" title-width="240rpx" rows-width="{{['600rpx']}}" rows-height="30rpx">
+						<!-- 插槽内容 -->
+						<view class="container" wx:for="{{catList}}" wx:key="item">
+							<l-card style="width:100%" l-img-class="l-img-class" type="avatar" full="{{true}}" image="{{item.catUrl}}" title="{{item.catName}}" data-catId="{{item.catId}}">
+							</l-card>
+						</view>
+						<view />
+					</l-skeleton>
 
-  <!-- <l-button type="default">default</l-button> -->
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+				</view>
+			</l-tabpanel>
+			
+			<l-tabpanel tab="科技园" key="科技园" slot="科技园">
+				<view class="tab-content">
+					<l-skeleton style="width:100%" paragraph="{{true}}" loading="{{skeletonLoading}}" rows="1" avatar="{{true}}" avatar-size="60rpx" avatar-shape="circle" title-width="240rpx" rows-width="{{['600rpx']}}" rows-height="30rpx">
+						<!-- 插槽内容 -->
+						<view class="container" wx:for="{{catList}}" wx:key="item">
+							<l-card style="width:100%" l-img-class="l-img-class" type="avatar" full="{{true}}" image="{{item.catUrl}}" title="{{item.catName}}" data-catId="{{item.catId}}">
+							</l-card>
+						</view>
+						<view />
+					</l-skeleton>
+				</view>
+			</l-tabpanel>
+			<l-tabpanel tab="文楼" key="文楼" slot="文楼">
+				<view class="tab-content">
+					<l-skeleton style="width:100%" paragraph="{{true}}" loading="{{skeletonLoading}}" rows="1" avatar="{{true}}" avatar-size="60rpx" avatar-shape="circle" title-width="240rpx" rows-width="{{['600rpx']}}" rows-height="30rpx">
+						<!-- 插槽内容 -->
+						<view class="container" wx:for="{{catList}}" wx:key="item">
+							<l-card style="width:100%" l-img-class="l-img-class" type="avatar" full="{{true}}" image="{{item.catUrl}}" title="{{item.catName}}" data-catId="{{item.catId}}">
+							</l-card>
+						</view>
+						<view />
+					</l-skeleton>
+				</view>
+			</l-tabpanel>
+			<l-tabpanel tab="其他" key="ALL" slot="ALL">
+				<view class="tab-content">
+					<!-- <l-skeleton style="width:100%" paragraph="{{true}}" loading="{{skeletonLoading}}" rows="5" avatar="{{true}}" avatar-size="60rpx" avatar-shape="circle" title-width="240rpx" rows-width="{{['600rpx']}}" rows-height="30rpx"> -->
+						<!-- 插槽内容 -->
+						<view class="container" wx:for="{{catList}}" wx:key="item">
+							<l-card style="width:100%" l-img-class="l-img-class" type="avatar" full="{{true}}" image="{{item.catUrl}}" title="{{item.catName}}" data-catId="{{item.catId}}">
+							</l-card>
+						</view>
+						<view />
+					<!-- </l-skeleton> -->
+				</view>
+			</l-tabpanel>
+		</l-tabs>
+	</view>
+	
 </view>

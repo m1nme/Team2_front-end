@@ -52,4 +52,5 @@
 </view>
 <view class="line"></view>
 <view class="hr"></view>
+
 <button bindtap="getUserInfoByuserId"></button>

@@ -19,6 +19,8 @@
   </view>
 </block>
 
+  <button bindtap="getfeedInfoByuserId"></button>
+
 
 <!--
 <view class="line"></view>
@@ -30,7 +32,8 @@
     <text>2020/09/09</text>
   </view>
 </view>
-<view class="line"></view>-->
+<view class="line"></view>
+-->
 
 
 

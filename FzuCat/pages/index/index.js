@@ -4,51 +4,56 @@ const app = getApp()
 
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    skeletonLoading:true,
+    catList:null
   },
+
   //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
+  changeTabs:function(e){
+    this.getCatListByAddress(e.detail.activeKey);
+   
   },
+
+  getCatListByAddress:function(address){
+
+    var that = this;
+    var token = wx.getStorageSync('token') //获取stroage的token
+   wx.request({
+     method:"POST",
+     dataType:"json",
+     url: 'https://iminx.cn/api/wxapp/showCatsList/', //仅为示例，并非真实的接口地址
+     data: {
+       token: token, //带上token
+       address:address
+     },
+     header: {
+       'content-type': 'application/json' // 默认值
+     },
+     success(res) {
+      that.setData({skeletonLoading:false})
+       console.log("getCatList"+res.data.msg)
+       
+       that.setData({catList:res.data.data})
+      //  that.data.catList=res.data.data
+       console.log(that.data.catList)
+     },
+     fail(){
+       console.log("失败")
+     }
+   })
+ },
+
+
   onLoad: function () {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
+    //授权登录
+    wx.getUserInfo()
+    app.checkLoginReadyCallback = res => {
+      this.getCatListByAddress("一区")
     }
+
   },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
-  }
+  onReady:function(){
+    this.changeTabs
+}
+
 })
