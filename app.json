@@ -1,0 +1,49 @@
+{
+  "usingComponents": {
+    "l-button": "lin-ui/button/index",
+    "l-skeleton": "lin-ui/skeleton/index",
+    "l-tabs": "lin-ui/tabs/index",
+    "l-tabpanel": "lin-ui/tabpanel/index",
+    "l-avatar": "lin-ui/avatar/index",
+    "l-card": "lin-ui/card/index"
+  },
+  "pages": [
+    "pages/kepu/kepu",
+    "pages/home/home",
+    "pages/mine/mine",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#0094ff",
+    "navigationBarTitleText": "福大猫猫",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "selectedColor": "#ffa500",
+    "list": [
+      {
+      "pagePath" :"pages/home/home",
+      "text": "首页",
+      "iconPath": "icon/home.png",
+      "selectedIconPath": "icon/home.png"
+    },
+    {
+      "pagePath" :"pages/kepu/kepu",
+      "text": "科普",
+      "iconPath": "icon/Book.png",
+      "selectedIconPath": "icon/Book.png"
+    },
+    {
+      "pagePath" :"pages/mine/mine",
+      "text": "我的",
+      "iconPath": "icon/mine.png",
+      "selectedIconPath": "icon/mine.png"
+    }
+  ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

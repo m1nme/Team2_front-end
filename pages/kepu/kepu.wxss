@@ -1,0 +1,55 @@
+.text{
+  font-size: 14px;
+}
+.swiper-tab{
+  width: 100%;
+  text-align: center;
+  line-height: 80rpx;}
+.swiper-tab-list{  font-size: 30rpx;
+  display: inline-block;
+  width: 25%;
+  color: #777777;
+}
+.on{ color: rgb(255, 187, 0);
+  border-bottom: 3rpx solid rgb(255, 187, 0);}
+
+.swiper-box{ display: block; height: 100%; width: 100%; overflow: hidden; }
+.weiyang1{
+  color: rgb(255, 187, 0);
+}.weiyang2{
+  color: rgb(255, 187, 0);
+}.weiyang3{
+  color: rgb(255, 187, 0);
+}.jibing1{
+  color: rgb(255, 187, 0);
+}.jibing2{
+  color: rgb(255, 187, 0);
+}.jibing3{
+  color: rgb(255, 187, 0);
+}.jibing4{
+  color: rgb(255, 187, 0);
+}.jibing5{
+  color: rgb(255, 187, 0);
+}.lumao1{
+  color: rgb(255, 187, 0);
+}.lumao2{
+  color: rgb(255, 187, 0);
+}.lumao3{
+  color: rgb(255, 187, 0);
+}.lumao4{
+  color: rgb(255, 187, 0);
+}.lingyang1{
+  color: rgb(255, 187, 0);
+}.lingyang2{
+  color: rgb(255, 187, 0);
+}.lingyang3{
+  color: rgb(255, 187, 0);
+}.lingyang4{
+  color: rgb(255, 187, 0);
+}.lingyang5{
+  color: rgb(255, 187, 0);
+}.img{
+  width:100%
+}
+
+
