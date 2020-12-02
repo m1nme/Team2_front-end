@@ -1,32 +1,32 @@
 <!--pages/document/document.wxml-->
 <view class="container">
 <view class="catImagePos">
- <image mode="{{image.aspectFill}}" src="{{catImageUrl}}" class="catImage">
+ <image mode="{{image.aspectFill}}" src="{{catInfo.catUrl}}" class="catImage">
  </image>
 </view>
 <view class="catInfo" >
-  <view class="color">
+  <view class="color" >
     <text class="titleFont">毛色：\n</text>
-    <text class="pageFont">{{color}}</text>
+    <text class="pageFont">{{catInfo.catColor}}</text>
   </view>
   <view class="sex">
     <text class="titleFont"> 性别：\n</text>
-    <text class="pageFont">{{sex}}</text>
+    <text class="pageFont">{{catInfo.catSex}}</text>
   </view>
   <view class="status">
     <text class="titleFont">状态：\n</text>
-    <text class="pageFont">{{status}}</text>
+    <text class="pageFont">{{catInfo.catStatus}}</text>
   </view>
   <view class="character">
     <text class="titleFont">性格：\n</text>
-    <text class="pageFont">{{char}}</text>
+    <text class="pageFont">{{catInfo.catCharacter}}</text>
   </view>
 </view>
 <view class="newFeed">
-    <text class="titleFont">近期喂食\n</text>
+    <text class="titleFont">近期喂食:\n</text>
 </view>
 <view >
-  <image class="followIcon" catchtap='onCollectionTap' wx:if="{{collected}}" src="https://i.loli.net/2020/11/20/NZioqyA3jWU2Ca9.png"></image>
+  <image class="followIcon" catchtap='onCollectionTap' wx:if="{{!like}}" src="https://i.loli.net/2020/11/20/NZioqyA3jWU2Ca9.png"></image>
  <image   class="followIcon" catchtap='onCollectionTap' wx:else src="https://i.loli.net/2020/11/20/3Y9OGhH8LNxjJpn.png"></image>
 </view>
 <view>
@@ -38,14 +38,29 @@
 
 <button  class="addIcon" size="mini" bindtap="modalinput">
 </button>
-   <modal hidden="{{hiddenmodalput}}" title="请输入喂食信息" 
+   <modal hidden="{{hiddenmodalinput}}" title="请输入喂食信息" 
    			confirm-text="提交" cancel-text="取消" bindcancel="modalinput" 
    			bindconfirm="confirm">
      <!-- 这里可以自由选择你的输入框类型<input type='text' placeholder="请输入内容" auto-focus/> -->
      <text class="pageFont">请注意喂食合适的食物</text>
-     <input type="text" placeholder="食物" class="weui-input"auto-focus></input>
+     <input type="text" placeholder="食物" class="weinput"auto-focus bindinput="getFoodName" value="{{foodName}}"></input>
      <text class="pageFont">如果三小时内有喂食记录请减少喂食量</text>
-     <input type="text" placeholder="分量" auto-focus></input>
+     <input type="text" placeholder="分量" class="weinput"auto-focus bindinput="getFoodAmount" value="{{foodAmount}}"></input>
    </modal>
   </view>
-   
+  <view wx:for="{{catFeedLog}}" wx:for-item="itemName" wx:key="catFeedLog">
+    <view class="newFeedLog1">
+      <view class="FeedLogFont">{{itemName.time}}  {{itemName.food}}\n</view>
+      <view class="FeedLogFont">————UserName</view>
+    </view>
+    <view class="newFeedLog2">
+      <view class="FeedLogFont">{{itemName.time}}  {{itemName.food}}</view>
+      <view class="FeedLogFont">————UserName</view>
+    </view>
+    <view class="newFeedLog3">
+      <view class="FeedLogFont">{{itemName.time}}  {{itemName.food}}</view>
+      <view class="FeedLogFont">————UserName</view>
+    </view>
+    
+  </view>
+   <button bindtap="test">测试</button>

@@ -29,28 +29,43 @@
 }
 .color{
   position: absolute;
-  left: 15%;
+  left: 10%;
   top: 33%;
 }
 .sex{
   position: absolute;
-  left:55%;
+  left:50%;
   top: 33%;
 }
 .status{
   position: absolute;
-  left: 15%;
+  left: 10%;
   top: 43%;
 }
 .character{
   position: absolute;
-  left: 55%;
+  left: 50%;
   top:43%;
 }
 .newFeed{
   position: absolute;
   top: 55%;
-  left: 15%;
+  left: 10%;
+}
+.newFeedLog1{
+  position: absolute;
+  top:60%;
+  left:10%;
+}
+.newFeedLog2{
+  position: absolute;
+  top:70%;
+  left:10%;
+}
+.newFeedLog3{
+  position: absolute;
+  top:80%;
+  left:10%;
 }
 .titleFont{
   font-weight: lighter;
@@ -59,7 +74,11 @@
 }
 .pageFont{
   font-weight: bold;
-  size: mini;
+  font-size: 30rpx;
+}
+.FeedLogFont{
+  font-weight:lighter;
+  font-size:25rpx;
 }
 .followIcon{
   position: fixed;
@@ -97,4 +116,6 @@ button::after {
   font-size: smaller;
   color: orangered;
 }
-
+.weinput{
+  border-bottom: 1px solid gray;
+}

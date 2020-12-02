@@ -33,7 +33,7 @@ Page({
     //授权登录
       console.log("scope")
       let that = this;
-      const eventChannel = this.getOpenerEventChannel()
+      const eventChannel = that.getOpenerEventChannel()
       // eventChannel.emit('acceptDataFromOpenedPage', { data: 'test' });
       // eventChannel.emit('someEvent', { data: 'test' });
       // 监听acceptDataFromOpenerPage事件，获取上一页面通过eventChannel传送到当前页面的数据
