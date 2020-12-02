@@ -33,7 +33,7 @@
   <image class="addIcon"src="https://i.loli.net/2020/11/20/v6wHoPh52cWQt47.png"></image>
 </view>
 <view>
-  <navigator class="forumLink">讨论它</navigator>
+  <navigator class="forumLink" hover-class="navigator-hover" url="">讨论它</navigator>
 </view>
 
 <button  class="addIcon" size="mini" bindtap="modalinput">
@@ -61,6 +61,4 @@
       <view class="FeedLogFont">{{itemName.time}}  {{itemName.food}}</view>
       <view class="FeedLogFont">————UserName</view>
     </view>
-    
   </view>
-   <button bindtap="test">测试</button>

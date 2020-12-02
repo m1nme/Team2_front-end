@@ -9,7 +9,7 @@ Page({
   data: {
     //初始化隐藏模态输入框
   catInfo:null,
-  catId:"2",
+  catId:1,
   like:false,
   hiddenmodalinput: true,
   catFeedLog:[
@@ -20,9 +20,8 @@ Page({
     }
 ],//临时数据示例，应该从getCatFeedLogBycatId获取
   scope:null,
-  timeId:null,
-  food:null,
-  time:null,
+  food:"",
+  time:"",
   foodName:"",
   foodAmount:""
 },
@@ -51,14 +50,13 @@ confirm:function(){//提交信息
   var token = wx.getStorageSync('token')
   wx.request({
     url:'https://iminx.cn/api/wxapp/feedCat/', 
-    header: { 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8' },
+    header: { 'Content-Type': 'application/json' },
     data: {
         token:token,
         catId:this.data.catId,
         food:this.data.food,
         time:this.data.time,
-        op:1,  //int
-        timeId: this.data.timeId,
+        op:1  //int
      },
      method: 'POST',
      success: function (res) {
@@ -179,9 +177,9 @@ onCollectionTap:function(){//关注按钮对应的事件函数
     like:!this.data.like
   })
   if(this.data.like){
-    this.confirmLike(this.catId)
+    this.confirmLike(this.data.catId)
   }else{
-    this.cancelLike(this.catId)
+    this.cancelLike(this.data.catId)
   }
   
 }, 
@@ -190,11 +188,11 @@ confirmLike:function(catId){
   var token = wx.getStorageSync('token')
   wx.request({
     url:'https://iminx.cn/api/wxapp/like/', 
-    header: { 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8' },
+    header: { 'Content-Type': 'application/json' },
     data: {
         token:token,
         TYPE:"CAT",
-        catId:catId,
+        ID:catId
      },
      method: 'POST',
      success: function (res) {
@@ -213,11 +211,11 @@ cancelLike:function(catId){
   var token = wx.getStorageSync('token')
   wx.request({
     url:'https://iminx.cn/api/wxapp/dislike/', 
-    header: { 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8' },
+    header: { 'Content-Type': 'application/json' },
     data: {
         token:token,
         TYPE:"CAT",
-        catId:catId,
+        ID:catId,
      },
      method: 'POST',
      success: function (res) {
@@ -263,7 +261,7 @@ getFoodAmount:function(e){
     app.checkLoginReadyCallback = res =>{
       this.getCatInfoBycatId(this.data.catId)
     }
-    this.checkIfLike("1")
+    this.checkIfLike(1)
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
