@@ -18,4 +18,5 @@
   </view>
 </view>
 </block>
-<button bindtap="getPostInfoByuserId"></button>
+
+<!--<button bindtap="getPostInfoByuserId"></button>-->

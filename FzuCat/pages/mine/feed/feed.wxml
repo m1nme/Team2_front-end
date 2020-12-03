@@ -19,7 +19,7 @@
   </view>
 </block>
 
-  <button bindtap="getfeedInfoByuserId"></button>
+<!--<button bindtap="getfeedInfoByuserId"></button>-->
 
 
 <!--

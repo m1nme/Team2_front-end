@@ -1,5 +1,5 @@
-// pages/post/post.js
-//var util = require('../../utils/util.js')
+
+//ar util = require('../../utils/util.js')
 const app = getApp()
 Page({
   data: {

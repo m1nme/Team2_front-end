@@ -15,7 +15,7 @@
   </view>
 </block>
 
-<button bindtap="getAttentionInfoByuserId"></button>
+<!--<button bindtap="getAttentionInfoByuserId"></button>-->
 
 
 <!--

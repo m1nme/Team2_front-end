@@ -11,7 +11,6 @@ Page({
   //事件处理函数
   changeTabs:function(e){
     this.getCatListByAddress(e.detail.activeKey);
-   
   },
 
   getCatListByAddress:function(address){
