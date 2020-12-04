@@ -30,7 +30,7 @@
 					<l-skeleton style="width:100%" paragraph="{{true}}" loading="{{skeletonLoading}}" rows="20" avatar="{{true}}" avatar-size="60rpx" avatar-shape="circle" title-width="240rpx" rows-width="{{['600rpx']}}" rows-height="30rpx">
 						<!-- 插槽内容 -->
 						<view class="container block" wx:for="{{catList['三区']}}" wx:key="item">
-							<l-card style="width:100%" l-img-class="l-img-class" type="avatar" full="{{true}}" image="{{item.catUrl}}" title="{{item.catName}}" data-catId="{{item.catId}}">
+							<l-card bindtap="gotoDocument" style="width:100%" l-img-class="l-img-class" type="avatar" full="{{true}}" image="{{item.catUrl}}" title="{{item.catName}}" data-catId="{{item.catId}}">
 							</l-card>
 							<view class="black-line"></view>
 						</view>
@@ -45,7 +45,7 @@
 					<l-skeleton style="width:100%" paragraph="{{true}}" loading="{{skeletonLoading}}" rows="20" avatar="{{true}}" avatar-size="60rpx" avatar-shape="circle" title-width="240rpx" rows-width="{{['600rpx']}}" rows-height="30rpx">
 						<!-- 插槽内容 -->
 						<view class="container block" wx:for="{{catList['科技园']}}" wx:key="item">
-							<l-card style="width:100%" l-img-class="l-img-class" type="avatar" full="{{true}}" image="{{item.catUrl}}" title="{{item.catName}}" data-catId="{{item.catId}}">
+							<l-card bindtap="gotoDocument" style="width:100%" l-img-class="l-img-class" type="avatar" full="{{true}}" image="{{item.catUrl}}" title="{{item.catName}}" data-catId="{{item.catId}}">
 							</l-card>
 							<view class="black-line"></view>
 						</view>
@@ -58,7 +58,7 @@
 					<l-skeleton style="width:100%" paragraph="{{true}}" loading="{{skeletonLoading}}" rows="20" avatar="{{true}}" avatar-size="60rpx" avatar-shape="circle" title-width="240rpx" rows-width="{{['600rpx']}}" rows-height="30rpx">
 						<!-- 插槽内容 -->
 						<view class="container block" wx:for="{{catList['文楼']}}" wx:key="item">
-							<l-card style="width:100%" l-img-class="l-img-class" type="avatar" full="{{true}}" image="{{item.catUrl}}" title="{{item.catName}}" data-catId="{{item.catId}}">
+							<l-card bindtap="gotoDocument" style="width:100%" l-img-class="l-img-class" type="avatar" full="{{true}}" image="{{item.catUrl}}" title="{{item.catName}}" data-catId="{{item.catId}}">
 							</l-card>
 							<view class="black-line"></view>
 						</view>
@@ -71,7 +71,7 @@
 					<l-skeleton style="width:100%" paragraph="{{true}}" loading="{{skeletonLoading}}" rows="20" avatar="{{true}}" avatar-size="60rpx" avatar-shape="circle" title-width="240rpx" rows-width="{{['600rpx']}}" rows-height="30rpx">
 						<!-- 插槽内容 -->
 						<view class="container block" wx:for="{{catList['ALL']}}" wx:key="item">
-							<l-card style="width:100%" l-img-class="l-img-class" type="avatar" full="{{true}}" image="{{item.catUrl}}" title="{{item.catName}}" data-catId="{{item.catId}}">
+							<l-card bindtap="gotoDocument" style="width:100%" l-img-class="l-img-class" type="avatar" full="{{true}}" image="{{item.catUrl}}" title="{{item.catName}}" data-catId="{{item.catId}}">
 							</l-card>
 							<view class="black-line"></view>
 						</view>
@@ -81,5 +81,8 @@
 			</l-tabpanel>
 		</l-tabs>
 	</view>
-	
+
+	<view bindtap="addNewCat" class="float-right">
+		<image style="z-index：10;width:35px;height:35px" alt="" src="../../resource/icon/add.svg"></image>
+	</view>
 </view>

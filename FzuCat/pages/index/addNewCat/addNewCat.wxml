@@ -1,0 +1,55 @@
+<!--pages/index/addNewCat/addNewCat.wxml-->
+<l-message />
+<view class="column_container">
+
+        <!-- <l-form-item label="猫猫头像"> -->
+      <view class="imageBlock">
+          <view class="align-container"> <view class="font">猫猫头像</view></view>
+          <l-image-picker count="1" bind:linchange="catHead" />
+      </view>
+      <!-- </l-form-item> -->
+
+      <!-- <l-form-item label="猫猫图片"> -->
+        <view class="imageBlock">
+          <view class="align-container"> <view class="font">猫猫图片</view></view>
+          <l-image-picker size="3" bind:linchange="catPic" />
+      </view>
+      <!-- </l-form-item> -->
+
+
+  <l-form name="info" bind:linsubmit="submit" >
+      <l-form-item label="猫猫昵称:" name="catName">
+          <l-input id="catName" value="{{info.id}}" hide-label show-row="{{false}}"/>
+      </l-form-item>
+
+      <l-form-item label="猫猫花色:" name="catColor">
+          <l-input id="catColor" value="{{info.name}}" hide-label show-row="{{false}}"/>
+      </l-form-item>
+
+      <l-form-item label="猫猫性别:" name="catSex" >
+          <l-input id="catSex" value="{{info.address}}" hide-label show-row="{{false}}"/>
+      </l-form-item>
+
+      <l-form-item label="猫猫性格:" name="catCharacter">
+          <l-input id="catCharacter" value="{{info.catCharacter}}" hide-label show-row="{{false}}"/>
+      </l-form-item>
+
+      <l-form-item label="猫猫状况:" name="catStatus" >
+          <l-input id="catStatus" value="{{info.store}}" hide-label show-row="{{false}}"/>
+      </l-form-item>
+
+       <l-form-item label="猫猫地址：" name="catAddress">
+          <l-input id="catAddress" value="{{info.phone}}" hide-label show-row="{{false}}"/>
+      </l-form-item>
+
+      <view class="buttons">
+      <view slot="submit">
+          <l-button  bindtap="confirm" >确认数据</l-button>
+      </view>
+      <view slot="reset">
+          <l-button  type="default" plain>重新输入</l-button>
+      </view>
+      </view>
+  </l-form>
+
+</view>

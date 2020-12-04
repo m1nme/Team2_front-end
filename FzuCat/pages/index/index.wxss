@@ -72,3 +72,20 @@ page{
 .block{
   background-color: #FFFFFF;
 }
+
+.float-right{
+  height: 100rpx;
+  width: 100rpx;
+  background-color: #FC8736 ;
+  border-radius: 100%;
+  position: fixed;
+  bottom: 50rpx;
+  right: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9;
+}
+.float-right:hover{
+  opacity: 0.8;
+}

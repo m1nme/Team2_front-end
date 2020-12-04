@@ -1,0 +1,24 @@
+/* pages/index/addNewCat/addNewCat.wxss */
+
+.column_container{
+  margin-top: 40px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.buttons{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50rpx;
+}
+
+.imageBlock{
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}

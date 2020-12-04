@@ -18,3 +18,14 @@
   justify-content: space-between;
   padding: 0rpx 0;
 }
+
+.align-container{
+  height:180rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.font{
+  color: #777;
+}

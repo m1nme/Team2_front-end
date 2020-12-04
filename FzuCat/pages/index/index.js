@@ -38,6 +38,12 @@ Page({
       }
     })
   },
+  addNewCat:function(){
+    var that = this;
+    wx.navigateTo({
+      url: 'addNewCat/addNewCat',
+    })
+  },
 
   getCatListByAddress: function (address) {
 

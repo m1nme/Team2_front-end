@@ -6,7 +6,13 @@
     "l-tabs":"lin-ui/tabs/index",
     "l-tabpanel":"lin-ui/tabpanel/index",
     "l-avatar":"lin-ui/avatar/index",
-    "l-card":"lin-ui/card/index"
+    "l-card":"lin-ui/card/index",
+    "l-icon":"lin-ui/icon/index",
+    "l-form":"lin-ui/form/index",
+    "l-input":"lin-ui/input/index",
+    "l-form-item":"lin-ui/form-item/index",
+    "l-message":"lin-ui/message/index",
+    "l-image-picker":"lin-ui/image-picker/index"
   },
   "pages":[
     "pages/mine/mine",
@@ -15,6 +21,7 @@
     "pages/mine/service/service",
     "pages/mine/myAttention/myAttention",
     "pages/index/scope_cat/scope_cat",
+    "pages/index/addNewCat/addNewCat",
     "pages/index/index",
     "pages/logs/logs",
     "pages/kepu/kepu",

@@ -16,6 +16,7 @@ const formatNumber = n => {
 }
 
 function uploadImage(){
+  var token = wx.getStorageSync('token');
   var _this=this
   wx.chooseImage({
     count: 1,
@@ -30,9 +31,10 @@ function uploadImage(){
         url: 'https://iminx.cn/api/wxapp/uploadImg/',
         method: 'POST',
         formData: {
-          'token': 'your_token'
+          'token': token
         },
         success (res){
+          console.log(res)
           const data = res.data
           console.log(data)
         }
@@ -41,8 +43,58 @@ function uploadImage(){
   })
 }
 
+function uploadOneImage(url){
+  var that = this;
+  var result = null;
+  var token = wx.getStorageSync('token');
+  wx.uploadFile({
+    filePath: url,
+    name: 'image',
+    url: 'https://iminx.cn/api/wxapp/uploadImg/',
+    method: 'POST',
+    formData: {
+      'token': token
+    },
+    success (res){
+      console.log(res)
+      const data = res.data
+      console.log(data)
+      result = res.data.data;
+    }
+  })
+  return result;
+}
+
+function uploadImageList(urlList){
+  var that = this;
+  var list = [];
+  var resultList = [];
+  list = urlList;
+  var token = wx.getStorageSync('token');
+  for(var i=0;i<list.length;i++){
+    wx.uploadFile({
+      filePath: list[i],
+      name: 'image',
+      url: 'https://iminx.cn/api/wxapp/uploadImg/',
+      method: 'POST',
+      formData: {
+        'token': token
+      },
+      success (res){
+        console.log(res)
+        const data = res.data
+        console.log(data)
+        resultList.push(res.data.data);
+      }
+    })
+  }
+  return  resultList;
+}
+
 
 module.exports = {
   formatTime: formatTime,
-  uploadImage: uploadImage
+  uploadImage: uploadImage,
+  uploadImageList:uploadImageList,
+  uploadOneImage:uploadOneImage
 }  
