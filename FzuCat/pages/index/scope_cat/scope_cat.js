@@ -5,7 +5,8 @@ Page({
   data: {
     scope: null,
     catList: [],
-    eleCatList:[]
+    eleCatList:[],
+    latestPosts:[]
   },
   getCatListByAddress: function (address) {
     var that = this;
@@ -13,7 +14,7 @@ Page({
     wx.request({
       method: "POST",
       dataType: "json",
-      url: 'https://iminx.cn/api/wxapp/showCatsList/', //仅为示例，并非真实的接口地址
+      url: 'https://iminx.cn/api/wxapp/showCatsList/',
       data: {
         token: token, //带上token
         address: address
@@ -23,6 +24,8 @@ Page({
       },
       success(res) {
         that.setData({ catList: res.data.data })
+        console.log(res)
+        console.log(res.data.data+"12313221") 
       },
       fail() {
         console.log("失败")
@@ -35,7 +38,7 @@ Page({
     wx.request({
       method: "POST",
       dataType: "json",
-      url: 'https://iminx.cn/api/wxapp/eleMiao/', //仅为示例，并非真实的接口地址
+      url: 'https://iminx.cn/api/wxapp/eleMiao/', 
       data: {
         token: token, //带上token
       },
@@ -50,8 +53,40 @@ Page({
       }
     })
   },
-  onLoad: function () {
+  getLatestPosts:function(){
+    var that = this;
+    var token = wx.getStorageSync('token') //获取stroage的token
+    wx.request({
+      method: "POST",
+      dataType: "json",
+      url: 'https://iminx.cn/api/wxapp/latestPosts/',
+      data: {
+        token: token, //带上token
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        that.setData({ eleCatList: res.data.data })
+      },
+      fail() {
+        console.log("失败")
+      }
+    })
+  },
+  gotoDocument:function(e){
+    wx.navigateTo({
+      url: '../../document/document',
+      success: function (res) {
+        console.log(e)
+        // 通过eventChannel向被打开页面传送数据
+        let catId = e.target.dataset.catid;
 
+        res.eventChannel.emit('acceptDataFromOpenerPage', { data: catId })
+      }
+    })
+  },
+  onLoad: function () {
 
     //获取常驻猫猫
     console.log("scope")

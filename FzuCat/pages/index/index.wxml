@@ -1,10 +1,10 @@
 <!--index.wxml-->
 <view class="container">
 	<view style="width:100%" >
-		<image bindtap="gotoScope" data-scope="一区" class="map-icon" src="../../resource/cat_icon/地图icon 1.jpg" style="margin-top:130rpx;margin-left:200rpx"></image>
-		<image bindtap="gotoScope" data-scope="文楼" class="map-icon" src="../../resource/cat_icon/地图icon 2.jpg" style="margin-top:100rpx;margin-left:620rpx"></image>
-		<image bindtap="gotoScope" data-scope="三区" class="map-icon" src="../../resource/cat_icon/地图icon 3.jpg" style="margin-top:330rpx;margin-left:200rpx"></image>
-		<image bindtap="gotoScope" data-scope="科技园" class="map-icon" src="../../resource/cat_icon/地图icon 4.jpg" style="margin-top:330rpx;margin-left:600rpx"></image>
+		<image bindtap="gotoScope" data-scope="一区" class="map-icon" src="https://iminx-1258939911.cos.ap-chengdu.myqcloud.com/fzucats/20201204122643.jpg" style="margin-top:130rpx;margin-left:200rpx"></image>
+		<image bindtap="gotoScope" data-scope="文楼" class="map-icon" src="https://iminx-1258939911.cos.ap-chengdu.myqcloud.com/fzucats/20201204122650.jpg" style="margin-top:100rpx;margin-left:620rpx"></image>
+		<image bindtap="gotoScope" data-scope="三区" class="map-icon" src="https://iminx-1258939911.cos.ap-chengdu.myqcloud.com/fzucats/20201204122654.jpg" style="margin-top:330rpx;margin-left:200rpx"></image>
+		<image bindtap="gotoScope" data-scope="科技园" class="map-icon" src="https://iminx-1258939911.cos.ap-chengdu.myqcloud.com/fzucats/20201204122703.jpg" style="margin-top:330rpx;margin-left:600rpx"></image>
 		<image style="width:100%" src="../../resource/image/fzumap.jpg"></image>
 	</view>
 
