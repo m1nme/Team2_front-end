@@ -1,33 +1,24 @@
 <!--pages/mine/myAttention/myAttention.wxml-->
-<!--pages/myAttention/myAttention.wxml-->
-<!--pages/myAttention/myAttention.wxml-->
-<view class="line"></view>
+
 <view class="begin">
   <view class="text01">关注的猫猫</view>
 </view>
 <view class="hr"></view>
-<view class='item'>
-  <image class="image" src="{{catUrl}}"></image>
-  <view class="title" >
-    {{catName}}
+
+<block wx:for="{{my_cat}}" wx:key="catId">
+  <view class="line"></view>
+  <view class='item'>
+    <image class="image" src="{{item.catUrl}}"></image>
+    <view class="title">
+      {{item.catName}}
+    </view>
   </view>
-</view>
-<view class="line"></view>
-<view class='item'>
-  <image class="image" src="{{catUrl}}"></image>
-  <view class="title" >
-    {{catName}}
-  </view>
-</view>
-<view class="line"></view>
-<view class="line"></view>
-<view class='item'>
-  <image class="image" src="{{catUrl}}"></image>
-  <view class="title" >
-    {{catName}}
-  </view>
-</view>
-<view class="line"></view>
+</block>
+
+<!--<button bindtap="getAttentionInfoByuserId"></button>-->
+
+
+<!--
 <view class="line"></view>
 <view class='item'>
   <image class="image" src="{{catUrl}}"></image>
@@ -35,5 +26,6 @@
     {{catName}}
   </view>
 </view>
-<view class="line"></view>
+-->
+
 

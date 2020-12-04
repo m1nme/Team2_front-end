@@ -4,8 +4,8 @@
     <view style="float:left;width:100%">
       <view class="cat-title">常驻猫</view>
     </view>
-    <view class="hori-list"  wx:for="{{catList}}" wx:key="item" wx:if="{{index<5}}">
-      <view data-catId="{{item.catId}}" bindtap="gotoDocument">
+    <view class="hori-list" >
+      <view data-catId="{{item.catId}}"  wx:for="{{catList}}" wx:key="item" wx:if="{{index<5}}" bindtap="gotoDocument">
         <image class="cat-avater" src="{{item.catUrl}}"></image>
       </view>
     </view>

@@ -9,6 +9,8 @@ Page({
     latestPosts:[]
   },
   getCatListByAddress: function (address) {
+    console.log("this   "+this.address)
+    console.log("test")
     var that = this;
     var token = wx.getStorageSync('token') //获取stroage的token
     wx.request({
@@ -96,11 +98,11 @@ Page({
     // eventChannel.emit('someEvent', { data: 'test' });
     // 监听acceptDataFromOpenerPage事件，获取上一页面通过eventChannel传送到当前页面的数据
     eventChannel.on('acceptDataFromOpenerPage', function (data) {
-      that.data.scope = data.data
+      that.setData({scope:data.data})
       console.log(that.data.scope)
+      that.getCatListByAddress(that.data.scope);
     })
-    that.getCatListByAddress(that.data.scope);
-    console.log(that.data.catList)
+  
 
     //获取饿了猫
     that.getEleCats();

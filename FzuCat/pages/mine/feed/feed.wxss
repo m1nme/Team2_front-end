@@ -1,4 +1,3 @@
-/* pages/mine/feed/feed.wxss */
 /* pages/feed/feed.wxss */
 /* pages/myAttention/myAttention.wxss */
 page{
@@ -15,28 +14,21 @@ page{
   position: absolute;
   left: 40%;
   top: 20%;
-  font-size: 38rpx;
-}
-.hr {
-  position: relative;
-  width: 100%;
-  height: 30rpx;
-  background-color: #ffffff;
+  font-size: 36rpx;
 }
  
 .item {
   position: relative;
   display: flex;
   flex-direction: row;
-  height: 400rpx;
-  background-color: #ffffff;
 }
 .image{
   position: absolute;
   top: 16%;
   left: 10%;
-  width:130rpx;
-  height: 130rpx;
+  width:80rpx;
+  height: 80rpx;
+  border-radius: 50%;
 }
  
 .title {
@@ -46,7 +38,7 @@ page{
   padding-top: 30rpx;
   padding-bottom: 20rpx;
   padding-left: 100rpx;
-  font-size: 36rpx;
+  font-size: 24rpx;
 }
  
 .detail2 {
@@ -59,7 +51,7 @@ page{
 }
  
 .line {
-  border: 2rpx solid #ff9900;
+  border: 2rpx solid #cccccc;
   opacity: 0.2;
 }
 .navigator-hover {

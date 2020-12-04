@@ -1,75 +1,49 @@
 // pages/feed/feed.js
+const app = getApp()
 Page({
-  data: {
-
+  data:{
+    cat_list:[
+      {
+        catId:"1",
+        food: "猫罐头x200g",
+        time: "202011111329",
+        op: 1,
+        userName: "故渊",
+        userUrl: "https://thirdwx.qlogo.cn/mmopen/vi_32/0dAfHYgu3XIj2ACwX9IyR4S2rs6hTjPJzeGuNLZQQuRR7wILElvxv8et6VCeE9fpl7GbwdKWSyZic2bEfoRlvow/132"
+    },
+    ]
   },
-  onLoad:function(){
+  getfeedInfoByuserId:function(op){
+    var token = wx.getStorageSync('token')
+    var that = this;
     wx.request({      
       url: 'https://iminx.cn/api/wxapp/getFeedLog/',
-      data:{
-        token: "3a92bca2ee0899495da3b3ea8698b62d",
-        op: "USER" 
-      },
       method:'post',
+      dataType:"json",
+      data:{
+        token: token,
+        op: op,
+      },
       header: {
         'content-type': 'application/json' // 默认值
-     },
-
-      success:function(res){
-        console.log("网络请求成功",res)
       },
-      fail:function(err){
-        console.log("网络请求失败",err)
+      success(res){
+        console.log("feedInfo:"+res.data.msg)
+        console.log(token)
+        console.log(res.data.data)
+        that.setData({
+          cat_list:res.data.data
+        })
+      },
+      fail(){
+        console.log("网络请求失败")
       }
     })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  onload:function(){
+    //wx.getUserInfo()
+    app.getfeedInfo = res =>{
+        this.getfeedInfoByuserId("USER");
+    }
   }
 })
