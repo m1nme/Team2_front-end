@@ -5,7 +5,7 @@
       <view class="cat-title">常驻猫</view>
     </view>
     <view class="hori-list">
-      <view wx:for="{{catList}}" wx:key="item">
+      <view wx:for="{{catList}}" wx:key="item" wx:if="{{index<5}}">
         <image class="cat-avater" src="{{item.catUrl}}"></image>
       </view>
     </view>
@@ -15,11 +15,15 @@
     <view style="float:left;width:100%">
       <view class="cat-title">饿了猫</view>
 
-      <view class="container block" style="width:100%" wx:for="{{catList}}" wx:key="item">
-        <l-card style="width:100%" l-img-class="l-img-class" type="avatar" full="{{true}}" image="{{item.catUrl}}" title="{{item.catName}}" data-catId="{{item.catId}}">
-              </l-card>
-              <view class="black-line"></view>
-              </view>
+      <view style="width:100%;margin-top:30rpx">
+        <view class="v-list" wx:for="{{elecat}}" wx:key="item" wx:if="{{index<5}}">
+          <l-card style="width:100%" l-img-class="l-img-class" type="avatar" full="{{true}}" image="{{item.catUrl}}"
+            title="{{item.catName}}" data-catId="{{item.catId}}">
+            <view>feedtime:{{item.feedTime}}</view>
+          </l-card>
+          <view class="black-line"></view>
+        </view>
+      </view>
     </view>
   </view>
 
@@ -33,7 +37,4 @@
       </view>
     </view>
   </view>
-
-  <button bindtap="getInfo">123</button>
-
 </view>
