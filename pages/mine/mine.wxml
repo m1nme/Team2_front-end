@@ -1,0 +1,57 @@
+<!--pages/mine/mine.wxml-->
+<view class="user_info_wrap">
+    <view class="user_info">
+      <image class="user_icon" src="{{avatarUrl}}"></image>
+    </view>
+
+    <view class="user_name_readme">
+      <view class="user_name">{{nickName}}</view>
+      <view class="user_readme">
+        <text>记得每天喂食猫猫\n谢谢您对猫猫的关照</text>
+      </view>
+    </view>
+</view>
+
+<view class="hr"></view>
+<view class='item'>
+  <image class="icon" src="icon/love.png"></image>
+  <view class="title">
+    <navigator url="/pages/mine/myAttention/myAttention" hover-class="navigator-hover">我的关注</navigator>
+  </view>
+</view>
+<view class="line"></view>
+ 
+<view class='item'>
+  <image class="icon" src="icon/评论.png"></image>
+  <view class="title">
+    <navigator url="/pages/mine/feed/feed" hover-class="navigator-hover">喂食记录</navigator>
+  </view>
+</view>
+<view class="line"></view>
+
+<view class='item'>
+  <image class="icon" src="icon/markbook.png"></image>
+  <view class="title">
+    <navigator url="/pages/mine/minepost/minepost" hover-class="navigator-hover">帖子及评论</navigator>
+  </view>
+</view>
+<view class="line"></view>
+<!--
+<view class="item">
+  <image class="icon" src="icon/设置.png" ></image>
+  <view class="title">
+    <navigator url="/pages/demo04/demo04" hover-class="navigator-hover">设置</navigator>
+  </view>
+</view>
+<view class="line"></view>
+-->
+<view class="item">
+  <image class="icon" src="icon/phone.png"></image>
+  <view class="title">
+    <navigator url="/pages/mine/service/service" hover-class="navigator-hover">在线客服</navigator>
+  </view>
+</view>
+<view class="line"></view>
+<view class="hr"></view>
+
+<!--<button bindtap="getUserInfoByuserId"></button>-->
