@@ -1,61 +1,71 @@
 //index.js
+
+const util = require("../../utils/util");
+
 //获取应用实例
 const app = getApp()
 
 Page({
   data: {
-    catList:[{"id":"123","picUrl":"1234","records":["11月6日14：30 主食x1","11月6日19：30 鸡肉x1"]}],
-    skeletonLoding:true,
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    skeletonLoading: true,
+    catList: {}
   },
+
   //事件处理函数
-  bindViewTap: function() {
+  changeTabs: function (e) {
+    this.getCatListByAddress(e.detail.activeKey);
+  },
+
+  gotoScope: function (e) {
+    console.log(e);
     wx.navigateTo({
-      url: '../logs/logs'
+      url: 'scope_cat/scope_cat',
+      success: function (res) {
+        // 通过eventChannel向被打开页面传送数据
+        let scope = e.target.dataset.scope;
+        res.eventChannel.emit('acceptDataFromOpenerPage', { data: scope })
+      }
     })
   },
-  tap:function(){
-    this.data.catList.push({"id":"123","picUrl":"1234","records":["11月6日14：30 主食x1","11月6日19：30 鸡肉x1"]})
-    this.data.catList.push({"id":"124","picUrl":"1244","records":["11月6日14：30 主食x1","11月6日19：30 鸡肉x1"]})
-    console.log(this.data.catList.length)
-  },
-  onLoad: function () {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
+
+  getCatListByAddress: function (address) {
+
+    var that = this;
+    var token = wx.getStorageSync('token') //获取stroage的token
+    wx.request({
+      method: "POST",
+      dataType: "json",
+      url: 'https://iminx.cn/api/wxapp/showCatsList/', //仅为示例，并非真实的接口地址
+      data: {
+        token: token, //带上token
+        address: address
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        that.setData({ skeletonLoading: false })
+        console.log(res.data.data);
+        var temp = that.data.catList;
+        temp[address] = res.data.data;
+        that.setData({ catList: temp })
+      },
+      fail() {
+        console.log("失败")
       }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
+    })
+  },
+
+
+  onLoad: function () {
+    //授权登录
+    wx.getUserInfo()
+    app.checkLoginReadyCallback = res => {
+      this.getCatListByAddress("一区")
     }
   },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
+  onReady: function () {
+    this.changeTabs
   }
+
 })
