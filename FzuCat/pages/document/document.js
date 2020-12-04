@@ -1,4 +1,6 @@
 // pages/document/document.js
+const app=getApp()
+
 Page({
 
   /**
@@ -6,53 +8,267 @@ Page({
    */
   data: {
     //初始化隐藏模态输入框
-  collected:true,
-  hiddenmodalput: true,
-  color:"",
-  sex:"",
-  status:"",
-  char:"",
-  catImageUrl:"/resource/image/2.jpg",
-  "followImage":"https://i.loli.net/2020/11/20/NZioqyA3jWU2Ca9.png",
-  "followedImage":"https://i.loli.net/2020/11/20/3Y9OGhH8LNxjJpn.png",
-  "nofollowImage":"https://i.loli.net/2020/11/20/NZioqyA3jWU2Ca9.png"
+  catInfo:null,
+  catId:1,
+  like:false,
+  hiddenmodalinput: true,
+  catFeedLog:[
+    {
+        "catId": 1,
+        "food": "猫罐头x200g",
+        "time": "202011111329",
+    }
+],//临时数据示例，应该从getCatFeedLogBycatId获取
+  scope:null,
+  food:"",
+  time:"",
+  foodName:"",
+  foodAmount:""
 },
+
+
+
+test:function(){
+  console.log("test");
+  this.getFeedLogBycatId("1","BRIEF")
+},
+/**
+ * modal框取消函数
+ */
 modalinput: function () {
 this.setData({
   //注意到模态框的取消按钮也是绑定的这个函数，
   //所以这里直接取反hiddenmodalput，也是没有毛病
-  hiddenmodalput: !this.data.hiddenmodalput
+  hiddenmodalinput: !this.data.hiddenmodalinput
 })
 },
-test:function(){
-  console.log("test");
-},
+/**
+ * modal框提交函数--用request把喂食信息传到后端
+ */
 confirm:function(){//提交信息
-
-this.setData({
-  hiddenmodalput: !this.data.hiddenmodalput
+  var that = this
+  var token = wx.getStorageSync('token')
+  wx.request({
+    url:'https://iminx.cn/api/wxapp/feedCat/', 
+    header: { 'Content-Type': 'application/json' },
+    data: {
+        token:token,
+        catId:this.data.catId,
+        food:this.data.food,
+        time:this.data.time,
+        op:1  //int
+     },
+     method: 'POST',
+     success: function (res) {
+          console.log(res.data.msg);
+          that.setData({
+            hiddenmodalinput:!that.data.hiddenmodalinput,
+            foodName:"",
+            foodAmount:"",
+          })
+          console.log(that.data.hiddenmodalinput)
+     },
+     fail(){
+        console.log("Fail!")
+     },
 })
 },
+/**
+ * 
+ * 根据catId获取猫猫信息 
+ */
+getCatInfoBycatId:function(catId){
+  var that=this;
+  var token=wx.getStorageSync('token')//获取storge的token
 
+wx.request({
+  method:"POST",
+  dataType:"json",
+  url: 'https://iminx.cn/api/wxapp/getCatInfo/',
+  data:{
+    token:token,
+    catId:catId
+  },
+  header: {
+    'content-type': 'application/json' // 默认值
+  },
+  success(res){
+    console.log("catInfo "+res.data.msg)
+    that.setData({catInfo:res.data.data})
+    console.log(res.data.data)
+  },
+  fail(){
+    console.log("fail")
+  }
+})
+},
+/**
+ * 根据猫猫Id获得喂食列表
+ */
+getFeedLogBycatId:function(catId, op){
+  var that=this;
+  var token=wx.getStorageSync('token')//获取storge的token
+
+  wx.request({
+    method:"POST",
+    dataType:"json",
+    url: 'https://iminx.cn/api/wxapp/getFeedLog/',
+    data:{
+      token:token,
+      catId:catId,
+      op:op //有CAT、BRIEF、USER三种获取方式
+    },
+    header:{
+      'content-type': 'application/json' // 默认值
+    },
+    success(res){
+      console.log("catFeedLog "+ res.data.msg)
+      that.setData({catFeedLog:res.data.data})
+      console.log(that.data.catFeedLog)
+    },
+    fail(){
+      console.log("获取失败")
+    }
+
+  })
+},
+/**
+ * 关注按钮函数--检查是否有关注某一只猫猫，并初始渲染
+ */
+checkIfLike:function(catId){
+  var that=this;
+  var token=wx.getStorageSync('token')//获取storge的token
+
+  wx.request({
+    method:"POST",
+    dataType:"json",
+    url: 'https://iminx.cn/api/wxapp/getLikesNum/',
+    data:{
+      token:token,
+      TYPE:"CAT",
+      ID: catId
+    },
+    header:{
+      'content-type': 'application/json' // 默认值
+    },
+    success(res){
+      console.log("Like this cat "+ res.data.liked)
+      if(res.data.liked == 1)
+      {
+         that.setData({like:true})
+      }
+      else if(res.data.msg == 0)
+      {
+        that.setData({like:false})
+      }
+      console.log(that.data.like)
+    },
+    fail(){
+      console.log("获取失败")
+    }
+  })
+},
+
+/**
+ * 关注按钮函数--点击关注
+ */
+onCollectionTap:function(){//关注按钮对应的事件函数
+  this.setData({
+    like:!this.data.like
+  })
+  if(this.data.like){
+    this.confirmLike(this.data.catId)
+  }else{
+    this.cancelLike(this.data.catId)
+  }
+  
+}, 
+confirmLike:function(catId){
+  var that = this
+  var token = wx.getStorageSync('token')
+  wx.request({
+    url:'https://iminx.cn/api/wxapp/like/', 
+    header: { 'Content-Type': 'application/json' },
+    data: {
+        token:token,
+        TYPE:"CAT",
+        ID:catId
+     },
+     method: 'POST',
+     success: function (res) {
+          console.log(res.data.msg);
+          that.setData({
+          })
+          console.log("you already liked it")
+     },
+     fail(){
+        console.log("Fail!")
+     },
+  })
+},
+cancelLike:function(catId){
+  var that = this
+  var token = wx.getStorageSync('token')
+  wx.request({
+    url:'https://iminx.cn/api/wxapp/dislike/', 
+    header: { 'Content-Type': 'application/json' },
+    data: {
+        token:token,
+        TYPE:"CAT",
+        ID:catId,
+     },
+     method: 'POST',
+     success: function (res) {
+          console.log(res.data.msg);
+          console.log("you already disliked it")
+          that.setData({
+          })
+
+     },
+     fail(){
+        console.log("Fail!")
+     },
+  })
+},
+/**
+ *  bindIput函数--收集喂食信息，储存在属性中 
+ */
+getFoodName:function(e){
+  var val = e.detail.value;
+  this.setData({
+    foodName:val
+  });
+  console.log(this.data.foodName)
+},
+getFoodAmount:function(e){
+  var val = e.detail.value;
+  this.setData({
+    foodAmount:val
+  });
+  console.log(this.data.foodAmount)
+},
   /**
    * 生命周期函数--监听页面加载
    */
+
   onLoad: function (options) {
-    this.test();
-},
-
-onCollectionTap:function(){//收藏按钮对应的事件函数
-  this.setData({
-    collected:!this.data.collected
-  })
-},    
+    var that = this
+    const eventChannel = this.getOpenerEventChannel()
+    eventChannel.on('acceptDataFromOpenerPage', function(data) {
+     that.data.catId = data.data
+     console.log("document")
+     console.log(that.data.catId)
+    })
   
-
+    that.getCatInfoBycatId(this.data.catId)
+    
+    this.checkIfLike(1)
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+  
   },
 
   /**

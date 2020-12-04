@@ -52,6 +52,7 @@ Page({
   },
   onLoad: function () {
 
+
     //获取常驻猫猫
     console.log("scope")
     let that = this;
@@ -70,6 +71,7 @@ Page({
     that.getEleCats();
     console.log(that.data.eleCatList)
     //获取最新猫帖
+
 
   },
 

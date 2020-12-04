@@ -13,10 +13,10 @@
 			<l-tabpanel tab="一区" key="一区" slot="一区">
 				<view class="tab-content">
 
-					<l-skeleton style="width:100%" paragraph="{{true}}" loading="{{skeletonLoading}}" rows="20" avatar="{{true}}" avatar-size="60rpx" avatar-shape="circle" title-width="240rpx" rows-width="{{['600rpx']}}" rows-height="30rpx">
+					<l-skeleton  style="width:100%" paragraph="{{true}}" loading="{{skeletonLoading}}" rows="20" avatar="{{true}}" avatar-size="60rpx" avatar-shape="circle" title-width="240rpx" rows-width="{{['600rpx']}}" rows-height="30rpx">
 						<!-- 插槽内容 -->
 						<view class="container block" wx:for="{{catList['一区']}}" wx:key="item">
-							<l-card style="width:100%" l-img-class="l-img-class" type="avatar" full="{{true}}" image="{{item.catUrl}}" title="{{item.catName}}" data-catId="{{item.catId}}">
+							<l-card bindtap="gotoDocument" style="width:100%" l-img-class="l-img-class" type="avatar" full="{{true}}" image="{{item.catUrl}}" title="{{item.catName}}" data-catId="{{item.catId}}">
 							</l-card>
 							<view class="black-line"></view>
 						</view>

@@ -15,7 +15,6 @@ Page({
   changeTabs: function (e) {
     this.getCatListByAddress(e.detail.activeKey);
   },
-
   gotoScope: function (e) {
     console.log(e);
     wx.navigateTo({
@@ -24,6 +23,18 @@ Page({
         // 通过eventChannel向被打开页面传送数据
         let scope = e.target.dataset.scope;
         res.eventChannel.emit('acceptDataFromOpenerPage', { data: scope })
+      }
+    })
+  },
+  gotoDocument:function(e){
+    wx.navigateTo({
+      url: '../document/document',
+      success: function (res) {
+        console.log(e)
+        // 通过eventChannel向被打开页面传送数据
+        let catId = e.target.dataset.catid;
+
+        res.eventChannel.emit('acceptDataFromOpenerPage', { data: catId })
       }
     })
   },
