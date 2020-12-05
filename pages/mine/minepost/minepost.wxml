@@ -1,0 +1,24 @@
+<view class="begin">
+  <view class="headline">帖子及评论</view>
+</view>
+
+<block wx:for="{{minePost_list}}" wx:key="postId">
+<view class="hr"></view>
+<view class="post">
+  <view class="text">
+    <view class="title">
+      <!-- <navigator url="{{item.url}}" hover-class="navigator-hover">{{item.title}}</navigator> -->
+      {{item.title}}
+    </view>
+    <text class="time">{{item.time}}</text>
+  </view>
+  <view class="amount">
+    <image class="iconBrowse" src="../../mine/minepost/icon/browse.svg"></image>
+    <text class="numberBrowse">浏览</text>
+    <image class="iconComment" src="../../mine/minepost/icon/comment.svg"></image>
+    <text class="numberComment">评论</text>
+  </view>
+</view>
+</block>
+
+<!--<button bindtap="getPostInfoByuserId"></button>-->

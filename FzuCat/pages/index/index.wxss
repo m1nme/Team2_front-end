@@ -3,6 +3,7 @@
 page{
   background-color: rgba(238, 238, 238, 100);
 }
+
 .userinfo {
   display: flex;
   flex-direction: column;

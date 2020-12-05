@@ -1,11 +1,37 @@
 //app.js
 
+import { promisifyAll, promisify } from 'miniprogram-api-promise';
+const wxp = {}
+    // promisify all wx's api
+    promisifyAll(wx, wxp)
 App({
   globalData: {
     userInfo: 1,
     checkLogin: false
   },
   onLaunch: function () {
+    
+//     console.log(wxp.getSystemInfoSync())
+//     wxp.getSystemInfo().then(console.log)
+//     wxp.showModal().then(wxp.openSetting())
+    
+//     // compatible usage
+//     wxp.getSystemInfo({success(res) {console.log(res)}})
+    
+//     // promisify single api
+//     promisify(wx.getSystemInfo)().then(console.log)
+
+// // compatible usage
+// wxp.getSystemInfo({success(res) {console.log(res)}})
+
+// // promisify single api
+// promisify(wx.getSystemInfo)().then(console.log)
+//     (async () => {
+//     const p = await new Promise(resolve => {
+//         setTimeout(() => resolve("hello async/await"), 1000);
+//     });
+//     console.log(p);
+// })();
 
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []

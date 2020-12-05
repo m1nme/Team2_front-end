@@ -1,3 +1,8 @@
+import { promisifyAll, promisify } from 'miniprogram-api-promise';
+const wxp = {}
+    // promisify all wx's api
+    promisifyAll(wx, wxp)
+
 const formatTime = (time, option) => {
   const date = new Date(time)
   const year = date.getFullYear()
@@ -15,14 +20,14 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
-function uploadImage(){
+function uploadImage() {
   var token = wx.getStorageSync('token');
-  var _this=this
+  var _this = this
   wx.chooseImage({
     count: 1,
-    sizeType:['ortginal','compressed'],
-    sourceType:['album','camera'],
-    success:function(res){
+    sizeType: ['ortginal', 'compressed'],
+    sourceType: ['album', 'camera'],
+    success: function (res) {
       const tempFilePaths = res.tempFilePaths
       console.log(tempFilePaths)
       wx.uploadFile({
@@ -33,7 +38,7 @@ function uploadImage(){
         formData: {
           'token': token
         },
-        success (res){
+        success(res) {
           console.log(res)
           const data = res.data
           console.log(data)
@@ -42,59 +47,56 @@ function uploadImage(){
     }
   })
 }
-
-function uploadOneImage(url){
-  var that = this;
-  var result = null;
-  var token = wx.getStorageSync('token');
-  wx.uploadFile({
-    filePath: url,
-    name: 'image',
-    url: 'https://iminx.cn/api/wxapp/uploadImg/',
-    method: 'POST',
-    formData: {
-      'token': token
-    },
-    success (res){
-      console.log(res)
-      const data = res.data
-      console.log(data)
-      result = res.data.data;
-    }
-  })
-  return result;
-}
-
-function uploadImageList(urlList){
-  var that = this;
-  var list = [];
-  var resultList = [];
-  list = urlList;
-  var token = wx.getStorageSync('token');
-  for(var i=0;i<list.length;i++){
-    wx.uploadFile({
-      filePath: list[i],
+function uploadOneImage(url) {
+  return new Promise(function (resolve, reject) {
+    var that = this;
+    var result = null;
+    var token = wx.getStorageSync('token');
+    wxp.uploadFile({
+      filePath: url,
       name: 'image',
       url: 'https://iminx.cn/api/wxapp/uploadImg/',
       method: 'POST',
       formData: {
         'token': token
-      },
-      success (res){
-        console.log(res)
-        const data = res.data
-        console.log(data)
-        resultList.push(res.data.data);
       }
+    }).then(res=>{
+      var a = JSON.parse(res.data)
+      result = a.data.url;
+      console.log(result)
+      resolve(result)
+    }).catch(err=>{
+      console.log(err)
+      reject(err)
     })
+  })
+}
+
+ async function uploadImageList(urlList) {
+  
+  var that = this;
+  var list = [];
+  list = urlList;
+  console.log(list.length+"++++")
+  var token = wx.getStorageSync('token');
+
+  var requestList = []
+  for (var i = 0; i < list.length; i++) {
+   const p = await that.uploadOneImage(list[i])
+  requestList.push(p)
   }
-  return  resultList;
+  var final_list = []
+  await Promise.all(requestList).then((res)=>{final_list=res
+
+
+})
+
 }
 
 
 module.exports = {
   formatTime: formatTime,
   uploadImage: uploadImage,
-  uploadImageList:uploadImageList,
-  uploadOneImage:uploadOneImage
+  uploadImageList: uploadImageList,
+  uploadOneImage: uploadOneImage
 }  

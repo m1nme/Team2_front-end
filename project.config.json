@@ -1,0 +1,119 @@
+{
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": false,
+    "coverView": true,
+    "nodeModules": true,
+    "autoAudits": true,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": false,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "useMultiFrameRuntime": false,
+    "useApiHook": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "enableEngineNative": false,
+    "bundle": false,
+    "useIsolateContext": true,
+    "useCompilerModule": true,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.7.7",
+  "appid": "wx45ed3af9d9ec04fd",
+  "projectname": "%E4%BF%AE%E5%A4%8Dbug",
+  "debugOptions": {
+    "hidedInDevtools": []
+  },
+  "scripts": {},
+  "isGameTourist": false,
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/homepage/homepage",
+          "pathName": "pages/homepage/homepage",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mine/feed/feed",
+          "pathName": "pages/mine/feed/feed",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mine/myAttention/myAttention",
+          "pathName": "pages/mine/myAttention/myAttention",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mine/myAttention/myAttention",
+          "pathName": "pages/mine/science/science",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mine/index/index",
+          "pathName": "pages/mine/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/document/document",
+          "pathName": "pages/document/document",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/index/scope_cat",
+          "pathName": "pages/index/scope_cat/scope_cat",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/document/document",
+          "pathName": "pages/document/document",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

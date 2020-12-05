@@ -1,0 +1,43 @@
+<!--pages/index/scope_cat/scope_cat.wxml-->
+<view class="container">
+  <view class="container block">
+    <view style="float:left;width:100%">
+      <view class="cat-title">常驻猫</view>
+    </view>
+    <view class="hori-list" >
+      <view data-catId="{{item.catId}}"  wx:for="{{catList}}" wx:key="item" wx:if="{{index<5}}" bindtap="gotoDocument">
+        <image class="cat-avater" src="{{item.catUrl}}"></image>
+      </view>
+    </view>
+  </view>
+
+  <view style="margin-top:20rpx" class="container block">
+    <view style="float:left;width:100%">
+      <view class="cat-title">饿了猫</view>
+
+      <view style="width:100%;margin-top:30rpx">
+        <view class="v-list" wx:for="{{elecat}}" wx:key="item" wx:if="{{index<5}}">
+          <l-card style="width:100%" l-img-class="l-img-class" type="avatar" full="{{true}}" image="{{item.catUrl}}"
+            title="{{item.catName}}" data-catId="{{item.catId}}">
+            <view>feedtime:{{item.feedTime}}</view>
+          </l-card>
+          <view class="black-line"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view style="margin-top:20rpx" class="container block">
+    <view style="float:left;width:100%">
+      <view class="cat-title">最新猫帖</view>
+    </view>
+    <view class="v-list">
+      <view class="container block" wx:for="{{lasestPosts}}" wx:key="item">
+        <view data-postId="{{item.postId}}" class="card">
+          <view class="post-title">{{item.postTitle}}</view>
+          <view class="black-line"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

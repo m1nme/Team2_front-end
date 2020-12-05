@@ -9,7 +9,7 @@
 	</view>
 
 	<view class="center-container">
-		<l-tabs bind:linchange="changeTabs" animated="{{false}}" swipeable="{{true}}" style="width:100%" l-active-class="l-active-class" l-line-class="l-line-class">
+		<l-tabs content-height="1000" bind:linchange="changeTabs" animated="{{false}}" swipeable="{{true}}" style="width:100%" l-active-class="l-active-class" l-line-class="l-line-class">
 			<l-tabpanel tab="一区" key="一区" slot="一区">
 				<view class="tab-content">
 
@@ -25,7 +25,7 @@
 					
 				</view>
 			</l-tabpanel>
-			<l-tabpanel tab="三区" key="三区" slot="三区">
+			<l-tabpanel  tab="三区" key="三区" slot="三区">
 				<view class="tab-content">
 					<l-skeleton style="width:100%" paragraph="{{true}}" loading="{{skeletonLoading}}" rows="20" avatar="{{true}}" avatar-size="60rpx" avatar-shape="circle" title-width="240rpx" rows-width="{{['600rpx']}}" rows-height="30rpx">
 						<!-- 插槽内容 -->
@@ -34,7 +34,7 @@
 							</l-card>
 							<view class="black-line"></view>
 						</view>
-						<view />
+						<!-- <view /> -->
 					</l-skeleton>
 
 				</view>

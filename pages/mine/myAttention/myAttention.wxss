@@ -1,0 +1,68 @@
+/* pages/mine/myAttention/myAttention.wxss */
+/* pages/myAttention/myAttention.wxss */
+/* pages/myAttention/myAttention.wxss */
+page{
+  background-color: #ffffff;
+}
+.begin{
+  position: relative;
+  background-color: #ff9900;
+  height: 100rpx;
+  border-bottom-left-radius: 36rpx;
+  border-bottom-right-radius: 36rpx;
+}
+.text01{
+  position: absolute;
+  left: 40%;
+  top: 20%;
+  font-size: 36rpx;
+}
+.hr {
+  position: relative;
+  width: 100%;
+  height: 30rpx;
+  background-color: #ffffff;
+}
+ 
+.item {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  height: 140rpx;
+}
+.image{
+  position: absolute;
+  top: 16%;
+  left: 10%;
+  width:90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+}
+ 
+ 
+.title {
+  position: relative;
+  left: 15%;
+  top: 8%;
+  padding-top: 30rpx;
+  padding-bottom: 20rpx;
+  padding-left: 100rpx;
+  font-size: 32rpx;
+}
+ 
+.detail2 {
+  font-size: 30rpx;
+  position: absolute;
+  right: 20rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #888;
+}
+ 
+.line {
+  border: 2rpx solid #ccc;
+  opacity: 0.2;
+}
+.navigator-hover {
+  color:#ff9900;
+}

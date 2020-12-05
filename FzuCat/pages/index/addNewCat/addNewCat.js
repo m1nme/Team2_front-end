@@ -1,8 +1,10 @@
 // pages/index/addNewCat/addNewCat.js
 const app = getApp()
-import { promisic } from '../../../miniprogram_npm/lin-ui/utils/util.js'
-const util = require("../../../utils/util");
-
+import { promisifyAll, promisify } from 'miniprogram-api-promise';
+import util from '../../../utils/util';
+const wxp = {}
+    // promisify all wx's api
+    promisifyAll(wx, wxp)
 Page({
   /**
    * 页面的初始数据
@@ -27,7 +29,8 @@ Page({
   },
   catPic:function(event){
       var urlList = [];
-      for(var i=0;i<event.detail.current.length;i++){
+
+      for(var i=0;i<event.detail.all.length;i++){
          urlList.push(event.detail.current[i].url)
       }
       this.setData({catUrl:urlList})
@@ -44,15 +47,30 @@ showFailMessage(){
     content:'创建失败'
 })
 },
- async submit(event){
+async submit(event){
     var that = this;
     const {detail} = event;
     console.log(detail)
 
     //验证
 
-    var token = wx.getStorageSync('token') //获取stroage的token
+    var token = wx.getStorageSync('token')  //获取stroage的token
+    var headurl = await util.uploadOneImage(that.data.catAvatar)
     
+
+    var token = wx.getStorageSync('token');
+  
+    var list = that.data.catUrl
+    var requestList = []
+    for (var i = 0; i < list.length; i++) {
+     const p = await util.uploadOneImage(list[i])
+    requestList.push(p)
+    }
+    var final_list = []
+    await Promise.all(requestList).then((res)=>{final_list=res})
+
+
+    console.log(headurl)
       wx.request({
         method: "POST",
         dataType: "json",
@@ -61,11 +79,12 @@ showFailMessage(){
           token: token, //带上token
           catName:detail.values.catName,
           catColor:detail.values.catColor,
+          catCharacter:detail.values.catCharacter,
           catSex:detail.values.catSex,
           catStatus:detail.values.catStatus,
           catAddress:detail.values.catAddress,
-          catUrl: await promisic(util.uploadOneImage)(that.data.catAvatar),
-          urlList:await promisic(util.uploadImageList)(that.data.catUrl)
+          catUrl: headurl,
+          urlList:final_list
         },
         header: {
           'content-type': 'application/json' // 默认值
