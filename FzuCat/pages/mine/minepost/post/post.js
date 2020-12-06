@@ -7,7 +7,7 @@ Page({
     postInfo:null,
     title: "有谁知道它最近在哪吗？",
     content: "之前都在35栋楼下车库看到它，不知道现在在哪了,有谁知道它最近在哪吗？",
-    urlList: ['https://iminx-1258939911.cos.ap-chengdu.myqcloud.com/fzucats/20201113230601.jpg', 'https://iminx-1258939911.cos.ap-chengdu.myqcloud.com/fzucats/20201113230601.jpg', 'https://iminx-1258939911.cos.ap-chengdu.myqcloud.com/fzucats/20201113230601.jpg', 'https://iminx-1258939911.cos.ap-chengdu.myqcloud.com/fzucats/20201113230601.jpg'],
+    urlList: ['https://iminx-1258939911.cos.ap-chengdu.myqcloud.com/fzucats/20201113230601.jpg', 'https://iminx-1258939911.cos.ap-chengdu.myqcloud.com/fzucats/20201113230601.jpg', 'https://iminx-1258939911.cos.ap-chengdu.myqcloud.com/fzucats/20201113230601.jpg'],
     userName: "故渊",
     userUrl: "https://thirdwx.qlogo.cn/mmopen/vi_32/0dAfHYgu3XIj2ACwX9IyR4S2rs6hTjPJzeGuNLZQQuRR7wILElvxv8et6VCeE9fpl7GbwdKWSyZic2bEfoRlvow/132",
     catId: 1,
