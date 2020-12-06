@@ -21,7 +21,7 @@
   display: flex;
   flex-direction: row;
   left: 18px;
-  top: 25px;
+  top: 30px;
   height: 150rpx;
 }
 
@@ -73,6 +73,8 @@
   position: relative;
   top: 10px;
   left: 18px;
+  width: 90%;
+  line-height: 180%;
   color: rgba(16, 16, 16, 100);
   font-size: 16px;
   text-align: left;
@@ -83,6 +85,7 @@
   position: relative;
   left: 0px;
   top: 20px;
+  width: 90%;
   display: flex;
   flex-direction: row;
   column-count: 3;
@@ -91,7 +94,7 @@
 
 .imageList{
   position: relative;
-  width: 89px;
-  height: 90px;
+  width: 150px;
+  height: 89px;
   margin-left: 18px;
 }
