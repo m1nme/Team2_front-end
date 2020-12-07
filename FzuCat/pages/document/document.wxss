@@ -9,64 +9,65 @@
 
 .catImage{
   position: relative;
-   height: 320rpx;
-   width: 660rpx;
 }
 .catImagePos{
+  margin-top: 10rpx;
   display: flex;
-  position: absolute;
-  top: 4%;
-  left: 6%;
   justify-content: center;
-  align-content:center ;
+  width: 100%;
 }
 .catInfo{
+  height: 300rpx;
   display: flex;
-  flex-direction: row;
-  justify-content: start;
-  align-items: baseline;
-  align-content: start;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
 }
 .color{
-  position: absolute;
-  left: 10%;
-  top: 33%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 .sex{
-  position: absolute;
-  left:50%;
-  top: 33%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 .status{
-  position: absolute;
-  left: 10%;
-  top: 43%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 .character{
-  position: absolute;
-  left: 50%;
-  top:43%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  
+}
+.h-box{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
 }
 .newFeed{
-  position: absolute;
-  top: 55%;
-  left: 10%;
+  display:flex;
+  width: 100%;
+  margin-left: 150rpx;
 }
-.newFeedLog1{
-  position: absolute;
-  top:60%;
-  left:10%;
+.newFeedLog{
+  display:flex;
+  width: 50%;
+  justify-content: center;
 }
-.newFeedLog2{
-  position: absolute;
-  top:70%;
-  left:10%;
-}
-.newFeedLog3{
-  position: absolute;
-  top:80%;
-  left:10%;
-}
+
 .titleFont{
   font-weight: lighter;
   font-size: smaller;
@@ -109,13 +110,21 @@ button::after {
 }
 
 .forumLink{
-  position: fixed;
-  top: 32%;
-  right: 6%;
+  display: flex;
+  width: 100%;
+  flex-direction: row-reverse;
+}
+.talkText{
   font-weight: lighter;
   font-size: smaller;
   color: orangered;
+  margin-top: 20rpx;
+  margin-right: 50rpx;
 }
 .weinput{
   border-bottom: 1px solid gray;
+}
+
+.FeedLog{
+
 }

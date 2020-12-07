@@ -33,7 +33,6 @@ Page({
         console.log(e)
         // 通过eventChannel向被打开页面传送数据
         let catId = e.target.dataset.catid;
-
         res.eventChannel.emit('acceptDataFromOpenerPage', { data: catId })
       }
     })

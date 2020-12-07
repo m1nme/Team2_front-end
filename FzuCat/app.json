@@ -25,7 +25,8 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/kepu/kepu",
-    "pages/document/document"
+    "pages/document/document",
+    "pages/postList/postList"
 
   ],
   "window":{

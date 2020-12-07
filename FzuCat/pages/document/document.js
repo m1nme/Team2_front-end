@@ -12,13 +12,7 @@ Page({
   catId:1,
   like:false,
   hiddenmodalinput: true,
-  catFeedLog:[
-    {
-        "catId": 1,
-        "food": "猫罐头x200g",
-        "time": "202011111329",
-    }
-],//临时数据示例，应该从getCatFeedLogBycatId获取
+  catFeedLog:[],//临时数据示例，应该从getCatFeedLogBycatId获取
   scope:null,
   food:"",
   time:"",
@@ -53,9 +47,9 @@ confirm:function(){//提交信息
     header: { 'Content-Type': 'application/json' },
     data: {
         token:token,
-        catId:this.data.catId,
-        food:this.data.food,
-        time:this.data.time,
+        catId:that.data.catId,
+        food:that.data.food,
+        time:that.data.time,
         op:1  //int
      },
      method: 'POST',
@@ -261,6 +255,7 @@ getFoodAmount:function(e){
     })
   
     that.getCatInfoBycatId(this.data.catId)
+    that.getFeedLogBycatId(this.data.catId,"CAT")
     
     this.checkIfLike(1)
   },
