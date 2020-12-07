@@ -1,0 +1,18 @@
+<!--pages/post/post.wxml-->
+<view class="post">
+  <view class="title">{{title}}</view>
+  <view class='item'>
+    <image class="image" src="{{userUrl}}"></image>
+    <view class='nt'>
+      <view class="name">{{userName}}</view>
+      <view class="time">{{time}}</view>
+    </view>
+  </view>
+  <view class="line"></view>
+  <view class="content">{{content}}</view>
+  <view class="imList">
+    <block wx:for="{{urlList}}" wx:key="{{index}}">
+      <image class="imageList" mode="aspectFit" src="{{item}}" bindtap="PreviewImg"></image>
+    </block>
+  </view>
+</view>
