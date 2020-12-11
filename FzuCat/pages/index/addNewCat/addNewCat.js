@@ -20,9 +20,7 @@ Page({
     },
   },
   confirm:function(){
-    console.log(1);
     wx.lin.submitForm('info');
-    console.log(2);
   },
   catHead:function(event){
       this.setData({catAvatar:event.detail.current[0].url})
@@ -38,7 +36,7 @@ Page({
   showSuccsessMessage(){
     wx.lin.showMessage({
       type:'success',
-      content:'创建成功'
+      content:'创建成功，等待管理员审核'
   })
 },
 showFailMessage(){

@@ -5,9 +5,6 @@
     </image>
   </view>
 
-  <view class="forumLink">
-    <navigator class="talkText" hover-class="navigator-hover" url="">讨论它</navigator>
-  </view>
   <view class="catInfo">
 
     <view class="h-box">
@@ -46,13 +43,16 @@
 
   <view class="container" wx:for="{{catFeedLog}}" wx:key="item">
     <view class="newFeedLog">
-      <view class="FeedLogFont">{{item.time}} {{item.food}}\n</view>
-      <view class="FeedLogFont">{{item.userName}}</view>
+      <view class="FeedLogFont">{{item.time}} {{item.food}}</view>
+      <view class="FeedLogFont">——{{item.userName}}</view>
     </view>
   </view>
 
   <button class="addIcon" size="mini" bindtap="modalinput">
   </button>
+  <div class="talk" size="mini" bindtap="gotoPost">
+      <image class="icon" src="./comment.svg"></image>
+  </div>
   <modal hidden="{{hiddenmodalinput}}" title="请输入喂食信息" confirm-text="提交" cancel-text="取消" bindcancel="modalinput"
     bindconfirm="confirm">
     <!-- 这里可以自由选择你的输入框类型<input type='text' placeholder="请输入内容" auto-focus/> -->
@@ -62,4 +62,10 @@
     <input type="text" placeholder="分量" class="weinput" auto-focus bindinput="getFoodAmount"
       value="{{foodAmount}}"></input>
   </modal>
+
+  <l-dialog bind:linconfirm="addFeedDialog" show="{{feedDialogShow}}" type="confirm" show-title="{{true}}" title="喂食">
+          <l-input bind:linblur="food" id="food" label="食物"  value="{{feedInfo.food}}"  show-row="{{false}}" required="{{true}}"/>
+          <l-input bind:linblur="num" id="num" label="分量" value="{{feedInfo.num}}"  show-row="{{false}}" required="{{true}}"/>
+  </l-dialog>
+
 </view>

@@ -82,7 +82,7 @@ Page({
       success: function (res) {
         console.log(e)
         // 通过eventChannel向被打开页面传送数据
-        let catId = e.target.dataset.catid;
+        let catId = e.currentTarget.dataset.catid;
 
         res.eventChannel.emit('acceptDataFromOpenerPage', { data: catId })
       }

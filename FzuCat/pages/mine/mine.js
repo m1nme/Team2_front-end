@@ -1,10 +1,36 @@
 // pages/mine/mine.js
-const app = getApp()
 
 Page({
   data:{
-      nickName: "M1N",
-      avatarUrl: "https://iminx-1258939911.cos.ap-chengdu.myqcloud.com/fzucats/20201113230601.jpg"
+      userInfo:{}
+  },
+  onLoad:function(){
+    var that = this
+    wx.getUserInfo({
+      success(res){
+        console.log(res)
+        that.setData({userInfo:res.userInfo})
+      }
+    })
+  },
+  onReady:function(){
+    var that = this
+    var token = wx.getStorageSync('token')
+    wx.request({
+      method: "POST",
+      dataType: "json",
+      url: 'https://iminx.cn/api/wxapp/changeUserInfo/',
+      data: {
+        token: token, //带上token
+        nickName:that.data.userInfo.nickName,
+        avatarUrl:that.data.userInfo.avatarUrl
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },success(res){
+        console.log(res)
+      }
+    })
   },
    //网络请求
    getUserInfoByuserId:function(){
@@ -33,13 +59,6 @@ Page({
         console.log("网络请求失败")
       }
     })
-  },
-
-  onload:function(){
-    wx.getUserInfo()
-    app.getUserInfoB = res =>{
-        this.getUserInfoByuserId();
-    }
   },
 
 })

@@ -64,8 +64,8 @@
 }
 .newFeedLog{
   display:flex;
-  width: 50%;
-  justify-content: center;
+  width: 100%;
+  flex-direction: column;
 }
 
 .titleFont{
@@ -78,22 +78,48 @@
   font-size: 30rpx;
 }
 .FeedLogFont{
-  font-weight:lighter;
-  font-size:25rpx;
+  margin-left: 120rpx;
+  width: 100%;
+  color: rgba(85, 85, 85, 100);
+  font-size: 16px;
+  text-align: left;
+  font-family: PingFangSC-regular;
 }
 .followIcon{
   position: fixed;
   width: 80rpx;
   height: 80rpx;
-  bottom: 5%;
-  right: 22%;
+  bottom: 10%;
+  right: 36%;
 }
 .addIcon{
   position: fixed;
   width: 80rpx;
   height: 80rpx;
-  bottom: 5%;
-  right: 10%;
+  bottom: 10%;
+  right: 4%;
+}
+.icon{
+  width: 45rpx;
+  height: 45rpx;
+  z-index: 99;
+
+}
+
+.talk{
+  position: fixed;
+  width: 80rpx;
+  height: 80rpx;
+  bottom: 10%;
+  right: 20%;
+  border-radius: 50%;
+  background-color: #FC8736 ;
+  display: flex;
+  justify-content: center;
+  align-items:  center;
+}
+.talk:hover{
+  opacity: 0.6;
 }
 button {
   margin: 0;
@@ -113,13 +139,6 @@ button::after {
   display: flex;
   width: 100%;
   flex-direction: row-reverse;
-}
-.talkText{
-  font-weight: lighter;
-  font-size: smaller;
-  color: orangered;
-  margin-top: 20rpx;
-  margin-right: 50rpx;
 }
 .weinput{
   border-bottom: 1px solid gray;

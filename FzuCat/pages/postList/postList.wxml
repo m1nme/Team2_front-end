@@ -1,24 +1,38 @@
+<l-message />
 <view class="begin">
   <view class="headline">帖子及评论</view>
 </view>
 
-<block wx:for="{{minePost_list}}" wx:key="postId">
-<view class="hr"></view>
-<view class="post">
-  <view class="text">
-    <view class="title">
-      <!-- <navigator url="{{item.url}}" hover-class="navigator-hover">{{item.title}}</navigator> -->
-      {{item.title}}
+<view bindtap="gotoPostInfo" wx:for="{{postList}}" wx:key="item" data-postId="{{item.postId}}">
+  <view class="hr"></view>
+  <view class="post">
+    <view class="text">
+      <view class="title">
+        {{item.title}}
+      </view>
+      <text class="time">{{item.time}}</text>
     </view>
-    <text class="time">{{item.time}}</text>
-  </view>
-  <view class="amount">
-    <image class="iconBrowse" src="../../mine/minepost/icon/browse.svg"></image>
-    <text class="numberBrowse">浏览</text>
-    <image class="iconComment" src="../../mine/minepost/icon/comment.svg"></image>
-    <text class="numberComment">评论</text>
+    <view class="amount">
+      <image class="iconBrowse" src="./icon/browse.svg"></image>
+      <text class="numberBrowse">浏览</text>
+      <image class="iconComment" src="./icon/comment.svg"></image>
+      <text class="numberComment">评论</text>
+    </view>
   </view>
 </view>
-</block>
+<view bindtap="addNewPost" class="float-right">
+  <image style="z-index：10;width:35px;height:35px" alt="" src="../../resource/icon/add.svg"></image>
+</view>
+<l-dialog l-class="l-class" l-content-class="l-content-class" bind:linconfirm="addPostDialog" show="{{addPostDialog}}" type="confirm"  show-title="{{true}}">
+  <l-input style="width:90% !important" bind:linblur="title" id="title" label="标题" show-row="{{false}}" required="{{true}}" label-width="150" placeholder="请输入标题"/>
+  <l-textarea style="width:90%" bind:linblur="content" maxlength="500" placeholder="文字内容" required="{{true}}" />
 
-<!--<button bindtap="getPostInfoByuserId"></button>-->
+  <!-- <l-form-item label="猫猫图片"> -->
+  <view class="imageBlock">
+    <view class="cat-image">
+      <view class="font">图片</view>
+    </view>
+    <l-image-picker size="3" cout="9" bind:linchange="catPic" bind:linremove="catPic" />
+  </view>
+  <!-- </l-form-item> -->
+</l-dialog>

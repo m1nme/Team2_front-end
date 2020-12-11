@@ -2,19 +2,22 @@
 
   "usingComponents": {
     "l-button": "lin-ui/button/index",
-    "l-skeleton":"lin-ui/skeleton/index",
-    "l-tabs":"lin-ui/tabs/index",
-    "l-tabpanel":"lin-ui/tabpanel/index",
-    
-    "l-card":"lin-ui/card/index",
-    "l-icon":"lin-ui/icon/index",
-    "l-form":"lin-ui/form/index",
-    "l-input":"lin-ui/input/index",
-    "l-form-item":"lin-ui/form-item/index",
-    "l-message":"lin-ui/message/index",
-    "l-image-picker":"lin-ui/image-picker/index"
+    "l-skeleton": "lin-ui/skeleton/index",
+    "l-tabs": "lin-ui/tabs/index",
+    "l-tabpanel": "lin-ui/tabpanel/index",
+    "l-dialog": "lin-ui/dialog/index",
+    "l-textarea":"lin-ui/textarea/index",
+    "l-card": "lin-ui/card/index",
+    "l-icon": "lin-ui/icon/index",
+    "l-form": "lin-ui/form/index",
+    "l-input": "lin-ui/input/index",
+    "l-form-item": "lin-ui/form-item/index",
+    "l-message": "lin-ui/message/index",
+    "l-image-picker": "lin-ui/image-picker/index",
+    "l-album":"lin-ui/album/index"
+
   },
-  "pages":[
+  "pages": [
     "pages/mine/mine",
     "pages/mine/minepost/minepost",
     "pages/mine/minepost/post/post",
@@ -27,38 +30,39 @@
     "pages/logs/logs",
     "pages/kepu/kepu",
     "pages/document/document",
-    "pages/postList/postList"
-
+    "pages/postList/postList",
+    "pages/tologin/tologin",
+    "pages/postInfo/postInfo"
   ],
-  "window":{
-    "backgroundTextStyle":"dark",
+  "window": {
+    "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#ff9900",
     "navigationBarTitleText": "福大猫猫",
-    "navigationBarTextStyle":"white",
-    "enablePullDownRefresh":true
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
   },
   "tabBar": {
     "color": "#000000",
-    "selectedColor":"#ff9900",
-    "borderStyle":"black",
+    "selectedColor": "#ff9900",
+    "borderStyle": "black",
     "list": [{
-    "pagePath":"pages/index/index",
-    "text":"首页",
-    "iconPath":"icon/home.png",
-    "selectedIconPath":"icon/_home.png"
-    },
-    {
-      "pagePath":"pages/kepu/kepu",
-      "text":"科普",
-      "iconPath":"icon/Book.png",
-      "selectedIconPath":"icon/_Book.png"
-    },
-    {
-        "pagePath":"pages/mine/mine",
-        "text":"我的",
-        "iconPath":"icon/my.png",
-        "selectedIconPath":"icon/_my.png"
-    }
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "icon/home.png",
+        "selectedIconPath": "icon/_home.png"
+      },
+      {
+        "pagePath": "pages/kepu/kepu",
+        "text": "科普",
+        "iconPath": "icon/Book.png",
+        "selectedIconPath": "icon/_Book.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "icon/my.png",
+        "selectedIconPath": "icon/_my.png"
+      }
     ]
   },
   "style": "v2",

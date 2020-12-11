@@ -1,0 +1,26 @@
+<!--pages/postInfo/postInfo.wxml-->
+
+<view class="post">
+  <view class="title">{{postInfo.title}}</view>
+  <view class='item'>
+    
+    <image class="image" src="{{postInfo.userUrl}}"></image>
+    <view class='nt'>
+      <view class="name">{{postInfo.userName}}</view>
+      <view class="time">{{postInfo.time}}</view>
+    </view>
+  </view>
+  <view class="line"></view>
+  <view class="content">{{postInfo.content}}</view>
+  <view class="ablum" wx:if="{{urls.length>0}}">
+  <l-album id="catAblum" urls="{{urls}}" preview="{{true}}" custom-row-number="3"></l-album>
+</view>
+</view>
+<block wx:for="{{comment}}">
+
+  
+</block>
+
+
+
+

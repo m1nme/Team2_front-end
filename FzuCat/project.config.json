@@ -38,7 +38,7 @@
     "minifyWXSS": true
   },
   "compileType": "miniprogram",
-  "libVersion": "2.7.7",
+  "libVersion": "2.14.1",
   "appid": "wx62ff4ff261d85ff6",
   "projectname": "%E7%A6%8F%E5%A4%A7%E7%8C%AB%E7%8C%AB",
   "debugOptions": {
@@ -111,6 +111,12 @@
         {
           "name": "pages/document/document",
           "pathName": "pages/document/document",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mine/mine",
+          "pathName": "pages/mine/mine",
           "scene": null
         }
       ]
